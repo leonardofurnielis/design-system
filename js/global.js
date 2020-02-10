@@ -28,12 +28,12 @@ function navbarHideListener(event) {
 }
 
 function accordionToggleListener(event) {
-  const accordion = document.querySelector(".accordion-content");
   const element = event.target;
 
-  if (
-    element.classList.contains("accordion-item")
-  ) {
+  if (element.classList.contains("accordion-item") && element.id) {
+    const accordion = document.querySelector(
+      `#${element.id}.accordion-content`
+    );
     accordion.classList.toggle("accordion-show");
   }
 }
