@@ -422,15 +422,9 @@ a:hover {
 
 .accordion-icon-down {
   color: #282828;
-}
-
-.accordion-icon-down {
-  background: url("../icons/chevron-bottom.svg") no-repeat;
-  background-size: contain;
   position: absolute;
-  width: 12px;
-  height: 12px;
-  top: 14px;
+  font-size: 12px;
+  top: 10px;
   right: 8px;
 }
 
@@ -450,10 +444,10 @@ a:hover {
 .btn {
   position: relative;
   display: inline-block;
-  padding: 6px 12px;
+  padding: 10px 18px 10px 18px;
   font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
+  font-weight: 400;
+  line-height: 1.125rem;
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
@@ -461,15 +455,15 @@ a:hover {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 1px solid rgba(27, 31, 35, 0.2);
-  border-radius: 3px;
+  border: 0px;
+  border-radius: 0px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
 .btn-sm {
-  padding: 3px 10px;
+  padding: 6px 16px 6px 16px;
   font-size: 12px;
   line-height: 20px;
 }
@@ -483,22 +477,17 @@ a:hover {
 .btn-primary:active,
 .btn-primary:focus {
   background-color: #269f42;
-  border-color: rgba(27, 31, 35, 0.5);
-  background-image: linear-gradient(-180deg, #34d058, #28a745 90%);
 }
 
 .btn-secondary {
   color: #282828;
   background-color: #eff3f6;
-  background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
 }
 
 .btn-secondary:hover,
 .btn-secondary:active,
 .btn-secondary:focus {
   background-color: #e6ebf1;
-  background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
-  border-color: rgba(27, 31, 35, 0.35);
 }
 
 .btn-danger {
@@ -510,9 +499,7 @@ a:hover {
 .btn-danger:active,
 .btn-danger:focus {
   color: #ffffff;
-  background-color: #cb2431;
-  background-image: linear-gradient(-180deg, #de4450, #cb2431 90%);
-  border-color: rgba(27, 31, 35, 0.5);
+  background-color: #ba1b23;
 }
 
 .checkbox label {
@@ -545,7 +532,6 @@ a:hover {
   line-height: 20px;
   color: #282828;
   border: 1px solid #d1d5da;
-  border-radius: 3px;
   min-height: 34px;
   background-color: #fafbfc;
   box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
@@ -553,10 +539,8 @@ a:hover {
 }
 
 .text-input:focus {
-  border-color: #2188ff;
+  border-color: #0366d6;
   outline: none;
-  box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075),
-    0 0 0 0.2em rgba(3, 102, 214, 0.3);
 }
 
 .text-area {
@@ -573,38 +557,36 @@ a:hover {
   order: 3;
   resize: vertical;
   border: 1px solid #d1d5da;
-  border-radius: 3px;
   box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
   -webkit-appearance: none;
 }
 
 .text-area:focus {
-  border-color: #2188ff;
+  border-color: #0366d6;
   outline: none;
-  box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075),
-    0 0 0 0.2em rgba(3, 102, 214, 0.3);
 }
 
 .dropdown-input {
-  background: url("../icons/chevron-bottom.svg") no-repeat;
+  background: url("../icons/chevron-down.svg") no-repeat;
   background-color: #fafbfc;
   background-position: calc(100% - 8px) 10px;
   background-size: 12px;
 }
 
 .card {
+  min-width: 135px;
   cursor: pointer;
   width: 100%;
   flex-grow: 1;
   margin-bottom: 16px;
   background-color: #ffffff;
   border: 1px solid #d1d5da;
-  border-radius: 3px;
+  border-radius: 0px;
 }
 
 .card-icon {
-  font-size: 60px !important;
-  color: #282828 !important;
+  font-size: 60px;
+  color: #282828;
 }
 
 .card-wrapper {
@@ -616,38 +598,41 @@ a:hover {
 }
 
 .card-title {
-  font-size: 16px !important;
-  font-weight: 500 !important;
-  color: #0366d6 !important;
-  overflow: hidden !important;
-  overflow-wrap: break-word !important;
-  text-overflow: ellipsis !important;
-  word-wrap: break-word !important ;
+  font-size: 16px;
+  font-weight: 500;
+  min-height: 1.75rem;
+  color: #282828;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  border-bottom: 1px solid #d1d5da;
 }
 
 .card-text {
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  color: #5a6872 !important;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5a6872;
+  min-height: 3.75rem;
 }
 
 .card-footer {
   position: relative;
-  min-height: 34px;
+  min-height: 41px;
   width: 100%;
 }
 
 .card-button {
-  position: absolute !important;
-  bottom: 0px !important;
-  right: 0px !important;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }
 
 .alert {
-  font-size: 14rem !important;
-  font-weight: 400 !important;
-  line-height: 1.125rem !important;
-  letter-spacing: 0.16px !important;
+  font-size: 14rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  letter-spacing: 0.16px;
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: space-between;
@@ -729,12 +714,10 @@ a:hover {
     background-color 0.11s cubic-bezier(0.2, 0, 0.38, 0.9);
 }
 
-
-
 .navbar {
   margin: 0;
   overflow: hidden;
-  background: #333333;
+  background: #282828;
   z-index: 9999;
   margin-bottom: 24px;
 }
@@ -806,7 +789,7 @@ a:hover {
 
 @media (max-width: 768px) {
   .navbar {
-    background: #333333;
+    background: #282828;
   }
 
   body.navbar-show {
@@ -838,7 +821,7 @@ a:hover {
 
   .navbar-link {
     font-weight: 300;
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .navbar-list a {
@@ -864,4 +847,48 @@ a:hover {
   .logout {
     order: 3;
   }
+}
+
+.tag-wrapper {
+  margin-bottom: 5px;
+}
+
+.tag {
+  display: inline-block;
+  border-radius: 0.9375rem;
+  font-size: 14px;
+  margin: 0.25rem;
+  padding: 0.3rem 0.6rem;
+}
+
+.tag-blue {
+  color: #0366d6;
+  background-color: #edf4ff;
+  border: solid 1px #0366d6;
+}
+
+.tag-green {
+  color: #28a745;
+  background-color: #dafbe4;
+  border: solid 1px #28a745;
+}
+
+.tag-yellow {
+  color: #ffd21d;
+  background-color: rgba(253, 209, 58, 0.15);
+  border: solid 1px #ffd21d;
+}
+
+.tag-red {
+  color: #cb2431;
+  background-color: #fff0f1;
+  border: solid 1px #cb2431;
+}
+
+.tag-close {
+  position: relative;
+  font-size: 13px !important;
+  top: 2.3px;
+  margin-left: 4px;
+  cursor: pointer;
 }

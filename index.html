@@ -38,22 +38,26 @@
     <div class="container">
       <div class="row">
         <div class="accordion">
-          <div id="1" class="accordion-item">Header</div>
-          <div class="accordion-icon"></div>
+          <div id="ac-1" class="accordion-item">Header</div>
+          <i class="material-icons accordion-icon-down">
+            keyboard_arrow_down
+          </i>
         </div>
 
-        <div id="1" class="accordion-content">
+        <div id="ac-1" class="accordion-content">
           <p>
             Accordion 1
           </p>
         </div>
 
         <div class="accordion">
-          <div id="2" class="accordion-item">Header 2</div>
-          <div class="accordion-icon"></div>
+          <div id="ac-2" class="accordion-item">Header 2</div>
+          <i class="material-icons accordion-icon-down">
+            keyboard_arrow_down
+          </i>
         </div>
 
-        <div id="2" class="accordion-content">
+        <div id="ac-2" class="accordion-content">
           <p>
             Accordion 2
           </p>
@@ -126,6 +130,48 @@
             <i class="material-icons icon-16"> close </i>
           </button>
         </div>
+
+        <div class="alert alert-error">
+          <div class="alert-details">
+            <div class="alert-text-wrapper">
+              <p class="alert-title">Alert Title</p>
+              <p class="alert-message">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti iure nam sint quidem autem cupiditate ipsam illum,
+                nobis atque beatae quia repellat delectus. Itaque, pariatur
+                reiciendis. Repudiandae delectus repellendus harum!
+              </p>
+            </div>
+          </div>
+          <button
+            onclick="this.parentElement.style.display='none';"
+            class="alert-close-button"
+            type="button"
+            aria-label="close"
+          >
+            <i class="material-icons icon-16"> close </i>
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="tag-wrapper">
+          <span class="tag tag-green"
+            >Green <i class="material-icons tag-close"> close </i></span
+          >
+
+          <span class="tag tag-blue"
+            >Blue <i class="material-icons tag-close"> close </i></span
+          >
+
+          <span class="tag tag-yellow"
+            >Yellow <i class="material-icons tag-close"> close </i></span
+          >
+
+          <span class="tag tag-red"
+            >Red <i class="material-icons tag-close"> close </i></span
+          >
+        </div>
       </div>
 
       <div class="row">
@@ -169,14 +215,22 @@
 
       <div class="row">
         <div class="checkbox">
-          <input type="checkbox" name="vehicle1" value="Bike" />
-          <label for="vehicle1"> I have a bike</label><br />
+          <input type="checkbox" name="checkbox" value="checkbox-1" />
+          <label for="checkbox"> Checkbox 1</label><br />
+
+          <input type="checkbox" name="checkbox" value="checkbox-2" />
+          <label for="checkbox"> Checkbox 2</label><br />
+
+          <input type="checkbox" name="checkbox" value="checkbox-3" />
+          <label for="checkbox"> Checkbox 3</label><br />
         </div>
       </div>
 
       <div class="row">
         <div class="radio">
+          <input type="radio" name="age" value="100" /> 0 - 60<br />
           <input type="radio" name="age" value="100" /> 61 - 100<br />
+          <input type="radio" name="age" value="100" /> 101 - 160<br />
         </div>
       </div>
 

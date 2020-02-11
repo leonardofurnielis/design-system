@@ -29,11 +29,10 @@ function navbarHideListener(event) {
 
 function accordionToggleListener(event) {
   const element = event.target;
-
   if (element.classList.contains("accordion-item") && element.id) {
     const accordion = document.querySelector(
       `#${element.id}.accordion-content`
-    );
-    accordion.classList.toggle("accordion-show");
+      );
+      accordion.classList.toggle("accordion-show");
   }
 }
