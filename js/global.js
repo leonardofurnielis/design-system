@@ -8,11 +8,14 @@ window.onload = function() {
 function navbarToggleListener(event) {
   const nav = document.querySelector("#global-navbar");
   const body = document.querySelector("body");
-
   const element = event.target;
-  if (element.classList.contains("navbar-menu-icon")) {
-    nav.classList.toggle("show");
-    body.classList.toggle("navbar-show");
+
+  if (
+    element.classList.contains("navbar-menu-icon") ||
+    element.classList.contains("navbar-menu")
+  ) {
+    nav.classList.toggle("navbar-show");
+     body.classList.toggle("navbar-body-show");
   }
 }
 
@@ -22,8 +25,8 @@ function navbarHideListener(event) {
 
   const element = event.target;
   if (element.classList.contains("navbar-link")) {
-    nav.classList.toggle("show");
-    body.classList.toggle("navbar-show");
+    nav.classList.toggle("navbar-show");
+    body.classList.remove("navbar-show");
   }
 }
 
@@ -32,7 +35,7 @@ function accordionToggleListener(event) {
   if (element.classList.contains("accordion-item") && element.id) {
     const accordion = document.querySelector(
       `#${element.id}.accordion-content`
-      );
-      accordion.classList.toggle("accordion-show");
+    );
+    accordion.classList.toggle("accordion-show");
   }
 }
