@@ -15,7 +15,7 @@ function navbarToggleListener(event) {
     element.classList.contains("navbar-menu")
   ) {
     nav.classList.toggle("navbar-show");
-     body.classList.toggle("navbar-body-show");
+    body.classList.toggle("navbar-body-show");
   }
 }
 
@@ -32,10 +32,20 @@ function navbarHideListener(event) {
 
 function accordionToggleListener(event) {
   const element = event.target;
-  if (element.classList.contains("accordion-item") && element.id) {
-    const accordion = document.querySelector(
-      `#${element.id}.accordion-content`
-    );
+  if (element.parentElement.classList.contains("accordion")) {
+    const accordion = element.parentElement.getElementsByClassName(
+      "accordion-content"
+    )[0];
+
+    const accordionIcon = element.parentElement.getElementsByClassName(
+      "accordion-icon"
+    )[0];
+    if (accordionIcon.innerHTML.trim() === "keyboard_arrow_down") {
+      accordionIcon.innerHTML = "keyboard_arrow_up";
+    } else {
+      accordionIcon.innerHTML = "keyboard_arrow_down";
+    }
+
     accordion.classList.toggle("accordion-show");
   }
 }
