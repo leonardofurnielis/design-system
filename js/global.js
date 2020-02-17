@@ -3,7 +3,23 @@ window.onload = function() {
   document.addEventListener("click", navbarToggleListener);
   document.addEventListener("click", navbarHideListener);
   document.addEventListener("click", accordionToggleListener);
+  document.addEventListener("click", sidenavToggleListener);
+  document.addEventListener("click", dropdownToggleListener);
 };
+
+function sidenavToggleListener(event) {
+  const nav = document.querySelector("#global-sidenav");
+  const body = document.querySelector("body");
+  const element = event.target;
+  if (
+    (element.classList.contains("navbar-menu-icon") ||
+      element.classList.contains("navbar-menu")) &&
+    element.id === "sidenav-menu"
+  ) {
+    nav.classList.toggle("sidenav-show");
+    body.classList.toggle("navbar-body-show");
+  }
+}
 
 function navbarToggleListener(event) {
   const nav = document.querySelector("#global-navbar");
@@ -11,8 +27,9 @@ function navbarToggleListener(event) {
   const element = event.target;
 
   if (
-    element.classList.contains("navbar-menu-icon") ||
-    element.classList.contains("navbar-menu")
+    (element.classList.contains("navbar-menu-icon") ||
+      element.classList.contains("navbar-menu")) &&
+    element.id === "navbar-menu"
   ) {
     nav.classList.toggle("navbar-show");
     body.classList.toggle("navbar-body-show");
@@ -47,5 +64,16 @@ function accordionToggleListener(event) {
     }
 
     accordion.classList.toggle("accordion-show");
+  }
+}
+
+function dropdownToggleListener(event) {
+  const element = event.target;
+  if (element.parentElement.classList.contains("dropdown")) {
+    const dropdown = element.parentElement.getElementsByClassName(
+      "dropdown-menu"
+    )[0];
+
+    dropdown.classList.toggle("dropdown-menu-show");
   }
 }
