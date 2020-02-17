@@ -514,11 +514,11 @@ a:hover {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #8e9196;
+  color: #6f6f6f;
   text-align: center;
   white-space: nowrap;
-  background-color: #e9ecef;
-  border: 1px solid #d1d5da;
+  background-color: #f4f4f4;
+  border: 1px solid #e0e0e0;
 }
 
 .text-input {
@@ -922,7 +922,7 @@ a:hover {
 
 .sidenav-link-active {
   opacity: 0.8;
-  border-left: 4px solid #33a650;
+  border-left: 4px solid #448ff2;
   background-color: #171717;
 }
 

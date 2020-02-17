@@ -5,6 +5,7 @@ window.onload = function() {
   document.addEventListener("click", accordionToggleListener);
   document.addEventListener("click", sidenavToggleListener);
   document.addEventListener("click", dropdownToggleListener);
+  document.addEventListener("click", dropdownHideListener);
 };
 
 function sidenavToggleListener(event) {
@@ -76,4 +77,13 @@ function dropdownToggleListener(event) {
 
     dropdown.classList.toggle("dropdown-menu-show");
   }
+}
+
+function dropdownHideListener(event) {
+  const element = event.target;
+
+  if (!element.parentElement.classList.contains("dropdown")) {
+
+  }
+  console.log(dropdowns);
 }
