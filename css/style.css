@@ -331,11 +331,9 @@ a:hover {
   width: 100%;
   border-top: solid 1px #f4f4f4;
   border-bottom: solid 1px #f4f4f4;
-  border-radius: 4px;
   cursor: pointer;
   margin-top: 8px;
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.12),
-    0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .accordion:hover {
@@ -373,19 +371,16 @@ a:hover {
 .btn {
   position: relative;
   display: inline-block;
-  padding: 9px 22px 9px 22px;
+  padding: 8px 22px 8px 22px;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.125rem;
   white-space: nowrap;
   cursor: pointer;
-  border: 0px;
-  border-radius: 4px;
+  border: 2px solid transparent;
   color: #282828;
   background-color: #f4f4f4;
   letter-spacing: 0.16px;
-  box-shadow: 0 2px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 1px 5px 0 rgba(0, 0, 0, 0.12);
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -393,31 +388,63 @@ a:hover {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .btn:focus {
   outline: none;
-}
-
-.btn:active {
-  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.1),
-    0 4px 10px 1px rgba(0, 0, 0, 0.12), 0 3px 12px 2px rgba(0, 0, 0, 0.1);
+  border-color: #448ff2;
+  box-shadow: inset 0 0 0 1px #ffffff;
 }
 
 .btn-sm {
-  padding: 6px 22px 6px 22px;
+  padding: 4px 22px 4px 22px;
   font-size: 14px;
   line-height: 18px;
 }
 
 .btn-primary {
+  background-color: #448ff2;
+  color: #ffffff;
+}
+
+.btn-primary:focus {
+  outline: none;
+  border-color: #448ff2;
+  box-shadow: inset 0 0 0 1px #ffffff;
+}
+
+.btn-secondary {
+  background-color: #171717;
+  color: #ffffff;
+}
+
+.btn-secondary:focus {
+  outline: none;
+  border-color: #448ff2;
+  box-shadow: inset 0 0 0 1px #ffffff;
+}
+
+.btn-success {
   background-color: #33a650;
   color: #ffffff;
+}
+
+.btn-success:focus {
+  outline: none;
+  border-color: #448ff2;
+  box-shadow: inset 0 0 0 1px #ffffff;
 }
 
 .btn-danger {
   background-color: #f23838;
   color: #ffffff;
+}
+
+.btn-danger:focus {
+  outline: none;
+  border-color: #448ff2;
+  box-shadow: inset 0 0 0 1px #ffffff;
 }
 
 .checkbox label {
@@ -492,19 +519,6 @@ a:hover {
   white-space: nowrap;
   background-color: #e9ecef;
   border: 1px solid #d1d5da;
-  border-radius: 4px;
-}
-
-.input-group-append .input-group-text,
-.input-group-prepend .form-control {
-  border-bottom-left-radius: 0px;
-  border-top-left-radius: 0px;
-}
-
-.input-group-prepend .input-group-text,
-.input-group-append .form-control {
-  border-bottom-right-radius: 0px;
-  border-top-right-radius: 0px;
 }
 
 .text-input {
@@ -513,19 +527,11 @@ a:hover {
   font-weight: 400;
   line-height: 20px;
   color: #282828;
-  border: 1px solid #d1d5da;
-  border-radius: 4px;
-  min-height: 36px;
-  background-color: #fcfcfc;
-  box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
+  border: 0px;
+  border-bottom: solid 1px #6f6f6f;
+  min-height: 38px;
+  background-color: #f4f4f4;
   -webkit-appearance: none;
-}
-
-.text-input:focus,
-.select-input:focus {
-  border-color: #448ff2;
-  outline: none;
-  box-shadow: 0 0 0 0.17647rem rgba(131, 192, 253, 0.5);
 }
 
 .text-area {
@@ -534,23 +540,16 @@ a:hover {
   font-weight: 400;
   line-height: 20px;
   color: #282828;
-  background-color: #fcfcfc;
+  background-color: #f4f4f4;
   width: 100%;
   min-width: 10rem;
-  min-height: 36px;
+  min-height: 38px;
   -webkit-order: 3;
   order: 3;
   resize: vertical;
-  border: 1px solid #d1d5da;
-  border-radius: 4px;
-  box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
+  border: 0px;
+  border-bottom: solid 1px #6f6f6f;
   -webkit-appearance: none;
-}
-
-.text-area:focus {
-  border-color: #448ff2;
-  outline: none;
-  box-shadow: 0 0 0 0.17647rem rgba(131, 192, 253, 0.5);
 }
 
 .select-input {
@@ -558,13 +557,19 @@ a:hover {
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
-  background-color: #fcfcfc;
+  background-color: #f4f4f4;
   width: 100%;
   min-width: 10rem;
-  min-height: 36px;
-  border: 1px solid #d1d5da;
-  border-radius: 4px;
-  box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
+  min-height: 38px;
+  border: 0px;
+  border-bottom: solid 1px #6f6f6f;
+}
+
+.text-input:focus,
+.select-input:focus,
+.text-area:focus {
+  outline: none;
+  border-bottom: solid 2px #448ff2;
 }
 
 .card {
@@ -574,10 +579,8 @@ a:hover {
   flex-grow: 1;
   margin-bottom: 16px;
   background-color: #ffffff;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.12),
-    0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: solid 1px #f4f4f4;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .card-icon {
@@ -633,8 +636,7 @@ a:hover {
   color: #282828;
   margin-top: 16px;
   margin-bottom: 16px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .alert-info {
@@ -712,8 +714,6 @@ a:hover {
   background: #282828;
   z-index: 9999;
   min-height: 44px;
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.1),
-    0 6px 10px 0 rgba(0, 0, 0, 0.12), 0 1px 18px 0 rgba(0, 0, 0, 0.1);
 }
 
 .navbar-content {
@@ -879,8 +879,6 @@ a:hover {
   z-index: 9999;
   background-color: #282828;
   transition: 0.5s;
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.1),
-    0 6px 10px 0 rgba(0, 0, 0, 0.12), 0 1px 18px 0 rgba(0, 0, 0, 0.1);
 }
 
 .sidenav-content {
@@ -917,15 +915,15 @@ a:hover {
 
 .sidenav-link:hover {
   color: #f4f4f4;
-  background-color: #505050;
-  border-radius: 2px;
+  background-color: #171717;
   opacity: 1;
   text-decoration: none;
 }
 
 .sidenav-link-active {
-  opacity: 0.56;
-  background-color: #505050;
+  opacity: 0.8;
+  border-left: 4px solid #33a650;
+  background-color: #171717;
 }
 
 .sidenav-link-active:hover {
@@ -1032,7 +1030,6 @@ a:hover {
   background-color: #ffffff;
   background-clip: padding-box;
   border: 1px solid #d1d5da;
-  border-radius: 4px;
 }
 
 .dropdown-menu-show {
@@ -1045,6 +1042,7 @@ a:hover {
   width: 100%;
   padding: 0.25rem 1.5rem;
   clear: both;
+  line-height: 20px;
   font-weight: 400;
   color: #212529;
   text-align: inherit;
