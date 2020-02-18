@@ -70,10 +70,15 @@ function accordionToggleListener(event) {
 
 function dropdownToggleListener(event) {
   const element = event.target;
+  const dropdowns = document.querySelectorAll(".dropdown-menu-show");
+
   if (element.parentElement.classList.contains("dropdown")) {
     const dropdown = element.parentElement.getElementsByClassName(
       "dropdown-menu"
     )[0];
+    dropdowns.forEach(dropdown => {
+      dropdown.classList.remove("dropdown-menu-show");
+    });
 
     dropdown.classList.toggle("dropdown-menu-show");
   }
@@ -81,9 +86,13 @@ function dropdownToggleListener(event) {
 
 function dropdownHideListener(event) {
   const element = event.target;
-
-  if (!element.parentElement.classList.contains("dropdown")) {
-
+  const dropdowns = document.querySelectorAll(".dropdown-menu-show");
+  if (
+    !element.parentElement.classList.contains("dropdown") &&
+    dropdowns.length > 0
+  ) {
+    dropdowns.forEach(dropdown => {
+      dropdown.classList.remove("dropdown-menu-show");
+    });
   }
-  console.log(dropdowns);
 }
