@@ -17,7 +17,7 @@ function sidenavToggleListener(event) {
       element.classList.contains("navbar-menu")) &&
     element.id === "sidenav-menu"
   ) {
-    nav.classList.toggle("sidenav-show");
+    nav.classList.toggle("show");
     body.classList.toggle("navbar-body-show");
   }
 }
@@ -32,19 +32,17 @@ function navbarToggleListener(event) {
       element.classList.contains("navbar-menu")) &&
     element.id === "navbar-menu"
   ) {
-    nav.classList.toggle("navbar-show");
-    body.classList.toggle("navbar-body-show");
+    nav.classList.toggle("show");
+    body.classList.toggle("show");
   }
 }
 
 function navbarHideListener(event) {
   const nav = document.querySelector("#global-navbar");
-  const body = document.querySelector("body");
 
   const element = event.target;
   if (element.classList.contains("navbar-link")) {
-    nav.classList.toggle("navbar-show");
-    body.classList.remove("navbar-show");
+    nav.classList.toggle("show");
   }
 }
 
@@ -64,35 +62,34 @@ function accordionToggleListener(event) {
       accordionIcon.innerHTML = "keyboard_arrow_down";
     }
 
-    accordion.classList.toggle("accordion-show");
+    accordion.classList.toggle("show");
   }
 }
 
 function dropdownToggleListener(event) {
   const element = event.target;
-  const dropdowns = document.querySelectorAll(".dropdown-menu-show");
+  const dropdowns = document.querySelectorAll(".dropdown-menu.show");
 
   if (element.parentElement.classList.contains("dropdown")) {
     const dropdown = element.parentElement.getElementsByClassName(
       "dropdown-menu"
     )[0];
+    dropdown.classList.toggle("show");
     dropdowns.forEach(dropdown => {
-      dropdown.classList.remove("dropdown-menu-show");
+      dropdown.classList.remove("show");
     });
-
-    dropdown.classList.toggle("dropdown-menu-show");
   }
 }
 
 function dropdownHideListener(event) {
   const element = event.target;
-  const dropdowns = document.querySelectorAll(".dropdown-menu-show");
+  const dropdowns = document.querySelectorAll(".dropdown-menu.show");
   if (
     !element.parentElement.classList.contains("dropdown") &&
     dropdowns.length > 0
   ) {
     dropdowns.forEach(dropdown => {
-      dropdown.classList.remove("dropdown-menu-show");
+      dropdown.classList.remove("show");
     });
   }
 }
