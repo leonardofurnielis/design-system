@@ -10,28 +10,34 @@ window.onload = function() {
 
 function sidenavToggleListener(event) {
   const nav = document.querySelector("#global-sidenav");
-  const body = document.querySelector("body");
+  const menuIcon = document.querySelector("#sidenav-menu");
+
   const element = event.target;
   if (
     (element.classList.contains("navbar-menu-icon") ||
       element.classList.contains("navbar-menu")) &&
-    element.id === "sidenav-menu"
+    (element.id === "sidenav-menu" ||
+      element.parentElement.id === "navbar-menu")
   ) {
     nav.classList.toggle("show");
-    body.classList.toggle("navbar-body-show");
+    menuIcon.getElementsByClassName("one")[0].classList.toggle("show");
+    menuIcon.getElementsByClassName("two")[0].classList.toggle("show");
   }
 }
 
 function navbarToggleListener(event) {
   const nav = document.querySelector("#global-navbar");
+  const menuIcon = document.querySelector("#navbar-menu");
   const body = document.querySelector("body");
   const element = event.target;
 
   if (
     (element.classList.contains("navbar-menu-icon") ||
       element.classList.contains("navbar-menu")) &&
-    element.id === "navbar-menu"
+    (element.id === "navbar-menu" || element.parentElement.id === "navbar-menu")
   ) {
+    menuIcon.getElementsByClassName("one")[0].classList.toggle("show");
+    menuIcon.getElementsByClassName("two")[0].classList.toggle("show");
     nav.classList.toggle("show");
     body.classList.toggle("show");
   }
@@ -39,10 +45,13 @@ function navbarToggleListener(event) {
 
 function navbarHideListener(event) {
   const nav = document.querySelector("#global-navbar");
+  const menuIcon = document.querySelector("#navbar-menu");
 
   const element = event.target;
   if (element.classList.contains("navbar-link")) {
-    nav.classList.toggle("show");
+    nav.classList.remove("show");
+    menuIcon.getElementsByClassName("one")[0].classList.remove("show");
+    menuIcon.getElementsByClassName("two")[0].classList.remove("show");
   }
 }
 

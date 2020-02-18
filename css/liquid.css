@@ -790,11 +790,11 @@ a:hover {
   transition: 0.5s;
 }
 
-.navbar.show .one {
+.one.show {
   transform: rotate(45deg) translateY(4.5px);
 }
 
-.navbar.show .two {
+.two.show {
   transform: rotate(-45deg) translateY(-4.5px);
 }
 
