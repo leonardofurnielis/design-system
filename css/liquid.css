@@ -480,7 +480,7 @@ a:hover {
 
 .form-group label {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .input-group {
@@ -496,41 +496,15 @@ a:hover {
   line-height: 36px;
 }
 
-.input-group-append {
-  display: flex;
-}
-
-.input-group-prepend {
-  display: flex;
-}
-
-.input-group-text {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0.375rem 0.75rem;
-  margin-bottom: 0;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #6f6f6f;
-  text-align: center;
-  white-space: nowrap;
-  background-color: #f4f4f4;
-  border: 1px solid #e0e0e0;
-}
-
 .text-input {
   padding: 6px 8px;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   color: #282828;
-  border: 0px;
-  border-bottom: solid 1px #6f6f6f;
+  border: solid 1px #A8A8A8;
   min-height: 38px;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   -webkit-appearance: none;
 }
 
@@ -540,15 +514,14 @@ a:hover {
   font-weight: 400;
   line-height: 20px;
   color: #282828;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   width: 100%;
   min-width: 10rem;
   min-height: 38px;
   -webkit-order: 3;
   order: 3;
   resize: vertical;
-  border: 0px;
-  border-bottom: solid 1px #6f6f6f;
+  border: solid 1px #A8A8A8;
   -webkit-appearance: none;
 }
 
@@ -557,12 +530,11 @@ a:hover {
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   width: 100%;
   min-width: 10rem;
   min-height: 38px;
-  border: 0px;
-  border-bottom: solid 1px #6f6f6f;
+  border: solid 1px #A8A8A8;
 }
 
 .text-input:focus,
@@ -1022,15 +994,14 @@ a:hover {
   display: none;
   float: left;
   min-width: 10rem;
-  padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 14px;
   color: #282828;
   text-align: left;
   list-style: none;
-  background-color: #ffffff;
+  background-color: #f4f4f4;
   background-clip: padding-box;
-  border: 1px solid #d1d5da;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .dropdown-menu.show {
@@ -1041,7 +1012,7 @@ a:hover {
   text-decoration: none;
   display: block;
   width: 100%;
-  padding: 0.25rem 1.5rem;
+  padding: 11px 16px;
   clear: both;
   line-height: 20px;
   font-weight: 400;
@@ -1055,7 +1026,7 @@ a:hover {
 .dropdown-item:hover {
   text-decoration: none;
   color: #212529;
-  background-color: #f4f4f4;
+  background-color: #e5e5e5;
 }
 
 .breadcrumb {
@@ -1098,4 +1069,34 @@ a:hover {
 
 .breadcrumb-item.active a:hover {
   text-decoration: none;
+}
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 16px 16px 24px 16px;
+  margin-bottom: 0;
+  background-color: #ffffff;
+  border: 1px solid #d1d5da;
+  cursor: pointer;
+}
+
+.list-group-item + .list-group-item {
+  border-top-width: 0;
+}
+
+.list-group-item:hover{
+  background-color: #e5e5e5;
+}
+
+.list-group-item.active  {
+  background-color: #e5e5e5;
+  cursor: unset;
 }
