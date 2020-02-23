@@ -1101,3 +1101,28 @@ a:hover {
   background-color: #e5e5e5;
   cursor: unset;
 }
+
+@-webkit-keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  color: #448ff2;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  border: 0.25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: loading .75s linear infinite;
+  animation: loading .75s linear infinite;
+}
