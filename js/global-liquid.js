@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   ("use strict");
   document.addEventListener("click", navbarToggleListener);
   document.addEventListener("click", navbarHideListener);
@@ -6,6 +6,7 @@ window.onload = function() {
   document.addEventListener("click", sidenavToggleListener);
   document.addEventListener("click", dropdownToggleListener);
   document.addEventListener("click", dropdownHideListener);
+  document.addEventListener("click", listGroupSelectionListener);
 };
 
 function sidenavToggleListener(event) {
@@ -107,3 +108,17 @@ function dropdownHideListener(event) {
     });
   }
 }
+
+function listGroupSelectionListener(event) {
+  const element = event.target;
+  if (element.parentElement.classList.contains('list-group-selection')) {
+    const listItens = element.parentElement.querySelectorAll(".list-group-item.active");
+
+    listItens.forEach(listItem => {
+      listItem.classList.remove("active");
+    });
+
+    element.classList.toggle('active');
+  }
+}
+
