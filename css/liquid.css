@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 html {
   box-sizing: border-box;
 }
@@ -546,7 +548,6 @@ a:hover {
 
 .card {
   min-width: 135px;
-  cursor: pointer;
   width: 100%;
   flex-grow: 1;
   margin-bottom: 16px;

@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link href="css/liquid.css" type="text/css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 
 <body class="sidenav-wrapper">
@@ -40,25 +39,24 @@
           <img src="../../../assets/images/icon.png" width="48" height="48" />
         </a>
 
-        <a class="sidenav-link">Link 1</a>
-        <a class="sidenav-link">Link 2</a>
-        <a class="sidenav-link">Link 3</a>
-        <a class="sidenav-link">Link 4</a>
-        <a class="sidenav-link">Link 5</a>
-        <a class="sidenav-link">Link 6</a>
+        <a class="sidenav-link" href="#accordion">Accordion</a>
+        <a class="sidenav-link" href="#alert">Alert</a>
+        <a class="sidenav-link" href="#breadcrumb">Breadcrumb</a>
+        <a class="sidenav-link" href="#button">Button</a>
+        <a class="sidenav-link" href="#card">Card</a>
+        <a class="sidenav-link" href="#checkbox">Checkbox</a>
+        <a class="sidenav-link" href="#dropdown">Dropdown</a>
+        <a class="sidenav-link" href="#form">Form</a>
+        <a class="sidenav-link" href="#list">List</a>
+        <a class="sidenav-link" href="#radio">Radio</a>
+        <a class="sidenav-link" href="#tag">Tag</a>
+        <hr>
+        <a class="sidenav-link" href="#grid">Grid System</a>
       </div>
     </nav>
 
     <div class="container-fluid sidenav-container">
-      <div class="row">
-        <nav>
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a>Home</a></li>
-            <li class="breadcrumb-item active"><a>Library</a></li>
-          </ol>
-        </nav>
-      </div>
-      <span class="spacing-05"></span>
+      <h3 id="accordion">Accordion</h3>
       <div class="row">
         <div class="accordion">
           <div class="accordion-title">Header</div>
@@ -81,7 +79,9 @@
           </div>
         </div>
       </div>
+      <span class="spacing-05"></span>
 
+      <h3 id="alert">Alert</h3>
       <div class="row">
         <div class="alert alert-info">
           <div class="alert-details">
@@ -155,19 +155,19 @@
           </button>
         </div>
       </div>
-
+      <span class="spacing-05"></span>
+      <h3 id="breadcrumb">Breadcrumb</h3>
       <div class="row">
-        <div class="tag-wrapper">
-          <span class="tag tag-green">Green <i class="material-icons tag-close"> close </i></span>
-
-          <span class="tag tag-blue">Blue <i class="material-icons tag-close"> close </i></span>
-
-          <span class="tag tag-yellow">Yellow </span>
-
-          <span class="tag tag-red">Red </span>
-        </div>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a>Home</a></li>
+            <li class="breadcrumb-item active"><a>Library</a></li>
+          </ol>
+        </nav>
       </div>
       <span class="spacing-05"></span>
+
+      <h3 id="button">Button</h3>
       <div class="row">
         <button class="btn" type="button">Basic</button>
         <span class="spacing-03"></span>
@@ -179,7 +179,24 @@
         <span class="spacing-03"></span>
         <button class="btn btn-danger" type="button">Danger</button>
       </div>
+
       <span class="spacing-05"></span>
+      <div class="row">
+        <button class="btn btn-sm" type="button">Basic</button>
+        <span class="spacing-03"></span>
+        <button class="btn btn-primary btn-sm" type="button">Primary</button>
+        <span class="spacing-03"></span>
+        <button class="btn btn-secondary btn-sm" type="button">
+          Secondary
+        </button>
+        <span class="spacing-03"></span>
+        <button class="btn btn-success btn-sm" type="button">Success</button>
+        <span class="spacing-03"></span>
+        <button class="btn btn-danger btn-sm" type="button">Danger</button>
+      </div>
+
+      <span class="spacing-05"></span>
+      <h3 id="card">Card</h3>
       <div class="row">
         <div class="col-4">
           <div class="card">
@@ -201,7 +218,8 @@
             </div>
           </div>
         </div>
-
+      </div>
+      <div class="row">
         <div class="col-4">
           <div class="card">
             <div class="card-wrapper">
@@ -216,45 +234,8 @@
         </div>
       </div>
 
-      <div class="row">
-        <button class="btn btn-sm" type="button">Basic</button>
-        <span class="spacing-03"></span>
-        <button class="btn btn-primary btn-sm" type="button">Primary</button>
-        <span class="spacing-03"></span>
-        <button class="btn btn-secondary btn-sm" type="button">
-          Secondary
-        </button>
-        <span class="spacing-03"></span>
-        <button class="btn btn-success btn-sm" type="button">Success</button>
-        <span class="spacing-03"></span>
-        <button class="btn btn-danger btn-sm" type="button">Danger</button>
-      </div>
       <span class="spacing-05"></span>
-      <div class="row">
-        <div class="dropdown">
-          <button class="btn dropdown-toggle" type="button">
-            Dropdown
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <button class="btn dropdown-toggle" type="button">
-            Dropdown
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
-      </div>
-
-      <span class="spacing-05"></span>
+      <h3 id="checkbox">Checkbox</h3>
       <div class="row">
         <div class="checkbox">
           <label><input type="checkbox" name="checkbox" value="checkbox-1" />
@@ -265,56 +246,50 @@
             Checkbox 3</label><br />
         </div>
       </div>
-      <span class="spacing-05"></span>
 
       <span class="spacing-05"></span>
+      <h3 id="dropdown">Dropdown</h3>
       <div class="row">
-        <div class="radio">
-          <label> <input type="radio" name="age" value="100" /> 0 - 60 </label><br />
-          <label>
-            <input type="radio" name="age" value="100" /> 61 - 100 </label><br />
-          <label>
-            <input type="radio" name="age" value="100" /> 101 - 160 </label><br />
-        </div>
-      </div>
-      <span class="spacing-05"></span>
-      <div class="row">
-        <div class="form-group col-3">
-          <label>Form 1:</label>
-          <input type="text" class="form-control text-input" />
-        </div>
-        <div class="form-group col-3">
-          <label>Form 1:</label>
-          <input type="text" class="form-control text-input" />
-        </div>
-      </div>
-      <span class="spacing-05"></span>
-      <div class="row">
-        <div class="form-group col-3">
-          <div class="form-inline">
-            <div class="input-group">
-              <label>Form1:</label>
-              <input type="text" class="form-control text-input" />
-              <button class="btn btn-sm">Button</button>
-            </div>
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button">
+            Dropdown
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </div>
-
-        <div class="form-group col-3">
-          <div class="form-inline">
-            <div class="input-group">
-              <button class="btn btn-danger">Button</button>
-            </div>
+        <span class="spacing-03"></span>
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button">
+            Dropdown
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </div>
       </div>
+
       <span class="spacing-05"></span>
+      <h3 id="form">Form</h3>
       <div class="row">
-        <div class="form-group col-4">
-          <label>Form 2:</label>
+        <div class="form-group col-3">
+          <label>Name:</label>
+          <input type="text" class="form-control text-input" />
+        </div>
+        <div class="form-group col-3">
+          <label>Last Name:</label>
+          <input type="text" class="form-control text-input" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-3">
+          <label>Message:</label>
           <textarea class="form-control text-area"></textarea>
         </div>
-        <span class="spacing-05"></span>
         <div class="form-group col-4">
           <label>Select:</label>
           <select class="form-control select-input ">
@@ -323,7 +298,27 @@
           </select>
         </div>
       </div>
+      <div class="row">
+        <div class="form-group col-3">
+          <div class="form-inline">
+            <div class="input-group">
+              <label>Name:</label>
+              <input type="text" class="form-control text-input" />
+              <button class="btn btn-sm">Button</button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-3">
+          <div class="form-inline">
+            <div class="input-group">
+              <button class="btn btn-danger">Button</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <span class="spacing-05"></span>
+      <h3 id="list">List</h3>
       <div class="row">
         <ul class="list-group">
           <li class="list-group-item" aria-disabled="true">
@@ -337,8 +332,8 @@
           <li class="list-group-item">Vestibulum at eros</li>
         </ul>
       </div>
-
       <span class="spacing-05"></span>
+      <h5 id="list">List Selection</h5>
       <div class="row">
         <ul class="list-group list-group-selection">
           <li class="list-group-item" aria-disabled="true">
@@ -352,7 +347,36 @@
           <li class="list-group-item">Vestibulum at eros</li>
         </ul>
       </div>
+
       <span class="spacing-05"></span>
+      <h3 id="radio">Radio</h3>
+      <div class="row">
+        <div class="radio">
+          <label> <input type="radio" name="age" value="100" /> 0 - 60 </label><br />
+          <label>
+            <input type="radio" name="age" value="100" /> 61 - 100 </label><br />
+          <label>
+            <input type="radio" name="age" value="100" /> 101 - 160 </label><br />
+        </div>
+      </div>
+
+      <span class="spacing-05"></span>
+      <h3 id="tag">Tag</h3>
+      <div class="row">
+        <div class="tag-wrapper">
+          <span class="tag tag-green">Green <i class="material-icons tag-close"> close </i></span>
+
+          <span class="tag tag-blue">Blue <i class="material-icons tag-close"> close </i></span>
+
+          <span class="tag tag-yellow">Yellow </span>
+
+          <span class="tag tag-red">Red </span>
+        </div>
+      </div>
+
+      <span class="spacing-05"></span>
+      <h3 id="grid">Grid System</h3>
+      <h5>col-12</h5>
       <div class="row">
         <div class="col-12">
           <p>
@@ -364,8 +388,9 @@
         </div>
       </div>
       <hr />
+      <h5>col-6</h5>
       <div class="row">
-        <div class="col-8">
+        <div class="col-6">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
             voluptatum earum perspiciatis iste, molestiae consequatur,
@@ -373,7 +398,7 @@
             asperiores sit, exercitationem natus minima voluptatem nisi amet.
           </p>
         </div>
-        <div class="col-8">
+        <div class="col-6">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
             voluptatum earum perspiciatis iste, molestiae consequatur,
@@ -382,7 +407,7 @@
           </p>
         </div>
       </div>
-
+      <h5>col-1</h5>
       <div class="row">
         <div class="col-1">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat
