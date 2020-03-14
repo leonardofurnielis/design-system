@@ -53,9 +53,11 @@ function navbarHideListener(event) {
     const nav = document.querySelector("#global-navbar");
     const menuIcon = document.querySelector("#navbar-menu");
 
-    nav.classList.remove("show");
-    menuIcon.getElementsByClassName("one")[0].classList.remove("show");
-    menuIcon.getElementsByClassName("two")[0].classList.remove("show");
+    if (menuIcon) {
+      nav.classList.remove("show");
+      menuIcon.getElementsByClassName("one")[0].classList.remove("show");
+      menuIcon.getElementsByClassName("two")[0].classList.remove("show");
+    }
   }
 }
 
