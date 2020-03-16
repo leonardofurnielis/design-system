@@ -339,6 +339,10 @@ a:hover {
   align-items: center !important;
 }
 
+.mr-auto {
+  margin-right: auto!important;
+}
+
 .accordion {
   position: relative;
   width: 100%;
@@ -1146,4 +1150,86 @@ a:hover {
   border-radius: 50%;
   -webkit-animation: loading .75s linear infinite;
   animation: loading .75s linear infinite;
+}
+
+.toast {
+  position: relative;
+  font-size: 12rem;
+  font-weight: 400;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  height: auto;
+  min-height: 5rem;
+  max-width: 18rem;
+  min-width: 245px;
+  color: #282828;
+  margin-top: 16px;
+  margin-bottom: 16px;  
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+}
+
+.toast-details {
+  display: -webkit-flex;
+  display: flex;
+  margin: 0 1rem;
+}
+
+.toast-text-wrapper {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.toast-title {
+  color: #282828;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.125rem;
+  letter-spacing: 0.16px;
+  white-space: nowrap;
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 13px 0 7px 0;
+}
+
+.toast-time {
+  margin-right: 32px;
+  font-size: 11.2px;
+  font-weight: 500;
+}
+
+.toast-message {
+  margin-bottom: 0;
+  font-size: 13px;
+  letter-spacing: 0.16px;
+  word-break: break-word;
+  padding: 5px 0 12px 0;
+}
+
+.toast-close-button {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  color: #282828;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  height: 3rem;
+  width: 3rem;
+  min-width: 3rem;
+  max-width: 3rem;
+  transition: outline 0.11s cubic-bezier(0.2, 0, 0.38, 0.9),
+    background-color 0.11s cubic-bezier(0.2, 0, 0.38, 0.9);
 }
