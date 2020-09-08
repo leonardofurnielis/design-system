@@ -4,9 +4,10 @@ window.onload = function () {
   document.addEventListener("click", navbarHideListener);
   document.addEventListener("click", accordionToggleListener);
   document.addEventListener("click", sidenavToggleListener);
-  document.addEventListener("click", dropdownToggleListener);
-  document.addEventListener("click", dropdownHideListener);
+  document.addEventListener("click", menuToggleListener);
+  document.addEventListener("click", menuHideListener);
   document.addEventListener("click", listGroupSelectionListener);
+  document.addEventListener("click", tabHandlerListener);
 };
 
 function sidenavToggleListener(event) {
@@ -81,46 +82,73 @@ function accordionToggleListener(event) {
   }
 }
 
-function dropdownToggleListener(event) {
+function menuToggleListener(event) {
   const element = event.target;
 
-  if (element.parentElement.classList.contains("dropdown")) {
-    const dropdowns = document.querySelectorAll(".dropdown-menu.show");
-    const dropdown = element.parentElement.getElementsByClassName(
-      "dropdown-menu"
+  if (element.parentElement.classList.contains("menu")) {
+    const menus = document.querySelectorAll(".menu-menu.show");
+    const menu = element.parentElement.getElementsByClassName(
+      "menu-menu"
     )[0];
 
-    dropdown.classList.toggle("show");
-    dropdowns.forEach(dropdown => {
-      dropdown.classList.remove("show");
+    menu.classList.toggle("show");
+    menus.forEach((menu) => {
+      menu.classList.remove("show");
     });
   }
 }
 
-function dropdownHideListener(event) {
+function menuHideListener(event) {
   const element = event.target;
-  const dropdowns = document.querySelectorAll(".dropdown-menu.show");
+  const menus = document.querySelectorAll(".menu-menu.show");
 
   if (
-    !element.parentElement.classList.contains("dropdown") &&
-    dropdowns.length > 0
+    !element.parentElement.classList.contains("menu") &&
+    menus.length > 0
   ) {
-    dropdowns.forEach(dropdown => {
-      dropdown.classList.remove("show");
+    menus.forEach((menu) => {
+      menu.classList.remove("show");
     });
   }
 }
 
 function listGroupSelectionListener(event) {
   const element = event.target;
-  if (element.parentElement.classList.contains('list-group-selection')) {
-    const listItens = element.parentElement.querySelectorAll(".list-group-item.active");
+  if (element.parentElement.classList.contains("list-group-selection")) {
+    const listItens = element.parentElement.querySelectorAll(
+      ".list-group-item.active"
+    );
 
-    listItens.forEach(listItem => {
+    listItens.forEach((listItem) => {
       listItem.classList.remove("active");
     });
 
-    element.classList.toggle('active');
+    element.classList.toggle("active");
   }
 }
 
+function tabHandlerListener(event) {
+  const element = event.target;
+  if (element.parentElement.classList.contains("tab")) {
+    const tabParent = element.parentElement;
+    const ariaControl = element.attributes["aria-controls"].value;
+
+    const tabContent = document.querySelectorAll(
+      "#" + tabParent.id + ".tab-content"
+    )[0];
+
+    tabParent.childNodes.forEach((el) => {
+      if (el.classList) {
+        el.classList.remove("active");
+      }
+    });
+    tabContent.childNodes.forEach((el) => {
+      if (el.classList) {
+        el.classList.remove("show");
+      }
+    });
+
+    tabContent.querySelector("#" + ariaControl).classList.add("show");
+    element.classList.add("active");
+  }
+}

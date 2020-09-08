@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import url('https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700&display=swap');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700&display=swap");
 
 html {
   box-sizing: border-box;
@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   margin: 0;
   background: #ffffff;
   font-size: 0.875rem;
@@ -45,7 +45,7 @@ h6,
 .h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -100,14 +100,14 @@ a:hover {
 
 .container {
   width: 100%;
-  padding: 16px;
+  padding: 16px 46px 16px 46px;
   margin-right: auto;
   margin-left: auto;
 }
 
 .container-fluid {
   width: 100%;
-  padding: 16px;
+  padding: 16px 32px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -298,16 +298,16 @@ a:hover {
 }
 
 .mr-auto {
-  margin-right: auto!important;
+  margin-right: auto !important;
 }
 
 .accordion {
   position: relative;
   width: 100%;
-  border-top: solid 1px #E0E0E0;
-  border-bottom: solid 1px #E0E0E0;
   cursor: pointer;
   margin-top: 8px;
+  box-shadow: 0 0px 1px -2px rgba(0, 0, 0, 0.2), 0 0px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 .accordion:hover {
@@ -319,6 +319,7 @@ a:hover {
   padding-left: 24px;
   border: 0px;
   min-height: 32px;
+  font-weight: 600;
 }
 
 .accordion-icon {
@@ -341,11 +342,139 @@ a:hover {
   display: block;
 }
 
+.alert {
+  font-size: 14rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  letter-spacing: 0.16px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  height: auto;
+  min-height: 3rem;
+  min-width: 18rem;
+  color: #282828;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.alert-text-wrapper {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 0.75rem 0;
+}
+
+.alert-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.125rem;
+  letter-spacing: 0.16px;
+  margin: 0 0.5rem 0 0;
+  white-space: nowrap;
+}
+
+.alert-message {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.125rem;
+  letter-spacing: 0.16px;
+  word-break: break-word;
+}
+
+.alert-info {
+  border-left: 3px solid #276ef1;
+  background: #e3eefd;
+}
+
+.alert-error {
+  border-left: 3px solid #f23838;
+  background: #fde7e7;
+}
+
+.alert-warn {
+  border-left: 3px solid #f2a007;
+  background: #fef1d8;
+}
+
+.alert-success {
+  border-left: 3px solid #33a650;
+  background: #e2f6e7;
+}
+
+.alert-details {
+  display: -webkit-flex;
+  display: flex;
+  margin: 0 1rem;
+}
+
+.alert-close-button {
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  height: 3rem;
+  width: 3rem;
+  min-width: 3rem;
+  max-width: 3rem;
+  transition: outline 0.11s cubic-bezier(0.2, 0, 0.38, 0.9),
+    background-color 0.11s cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8px 1rem;
+  margin: 8px 0;
+  list-style: none;
+}
+
+.breadcrumb-item + .breadcrumb-item {
+  padding-left: 0.5rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  color: #282828;
+  content: "/";
+}
+
+.breadcrumb-item + .breadcrumb-item:hover::before {
+  text-decoration: none;
+}
+
+.breadcrumb-item a {
+  text-decoration: none;
+  color: #7952b3;
+  cursor: pointer;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active a {
+  color: #8d8d8d;
+  cursor: unset;
+}
+
+.breadcrumb-item.active a:hover {
+  text-decoration: none;
+}
+
 .btn {
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   position: relative;
   display: inline-block;
-  padding: 11px 20px;
+  padding: 8px 20px;
   font-size: 14px;
   font-weight: 500;
   line-height: 14px;
@@ -371,17 +500,17 @@ a:hover {
 }
 
 .btn:hover {
-  background-color: #E0E0E0;
+  background-color: #e0e0e0;
 }
 
 .btn-sm {
-  padding: 7px 14px;
+  padding: 6px 16px;
   font-size: 13px;
-  line-height: 16px;
+  line-height: 10px;
 }
 
 .btn-primary {
-  background-color: #276EF1;
+  background-color: #276ef1;
   color: #ffffff;
 }
 
@@ -415,7 +544,6 @@ a:hover {
   outline: none;
 }
 
-
 .btn-success:hover {
   background-color: #2a8942;
 }
@@ -433,9 +561,55 @@ a:hover {
   background-color: #d80e0e;
 }
 
+.card {
+  min-width: 135px;
+  width: 100%;
+  flex-grow: 1;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  box-shadow: 0 0px 1px -2px rgba(0, 0, 0, 0.2), 0 0px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+  font-size: 60px;
+  color: #282828;
+}
+
+.card-header {
+  font-weight: 600;
+  min-height: 1.75rem;
+  color: #282828;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.card-title {
+  font-weight: 600;
+  padding: 12px;
+  margin: 0;
+}
+
+.card-content {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 12px;
+  color: #5a6872;
+  min-height: 3.75rem;
+}
+
+.card-footer {
+  position: relative;
+  padding: 12px;
+  min-height: 40px;
+  width: 100%;
+}
+
 .checkbox label {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .checkbox {
@@ -488,69 +662,71 @@ a:hover {
 .checkbox .checkbox-checkmark:after {
   left: 4px;
   top: 0px;
-  width: .3625rem;
-  height: .7125rem;
-  border: solid #276EF1;
+  width: 0.3625rem;
+  height: 0.7125rem;
+  border: solid #276ef1;
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-
-.radio {
-  display: block;
+.menu {
   position: relative;
-  padding-left: 24px;
-  margin-bottom: 8px;
-  margin-right: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
-/* Hide the browser's default radio button */
-.radio input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-/* Create a custom radio button */
-.radio-checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 18px;
-  width: 18px;
-  background-color: #ffffff;
-  border: 1px solid #171717;
-  border-radius: 50%;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.radio-checkmark:after {
+.menu-toggle::after {
+  background: #ffffff;
+  display: inline-block;
+  margin-left: 0.325em;
+  vertical-align: 0.2em;
   content: "";
-  position: absolute;
-  display: none;
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
 }
 
-/* Show the indicator (dot/circle) when checked */
-.radio input:checked ~ .radio-checkmark:after {
+.menu-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  margin: 0.125rem 0 0;
+  font-size: 14px;
+  color: #282828;
+  text-align: left;
+  list-style: none;
+  background-color: #f4f4f4;
+  background-clip: padding-box;
+}
+
+.menu-menu.show {
   display: block;
 }
 
-/* Style the indicator (dot/circle) */
-.radio .radio-checkmark:after {
- 	top: 4px;
-	left: 4px;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: #276EF1;
+.menu-item {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  padding: 11px 16px;
+  clear: both;
+  line-height: 20px;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+
+.menu-item:hover {
+  text-decoration: none;
+  color: #212529;
+  background-color: #e5e5e5;
 }
 
 .form-inline {
@@ -575,7 +751,7 @@ a:hover {
 }
 
 .form-group label {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 12px;
 }
 
@@ -593,12 +769,12 @@ a:hover {
 }
 
 .text-input {
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: 14px;
   padding: 8px 18px;
   line-height: 14px;
   color: #282828;
-  border: solid 1px #C6C6C6;
+  border: solid 1px #c6c6c6;
   min-height: 40px;
   background-color: #ffffff;
   -webkit-appearance: none;
@@ -606,7 +782,7 @@ a:hover {
 }
 
 .text-area {
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: 14px;
   padding: 12px 18px;
   line-height: 17px;
@@ -618,13 +794,12 @@ a:hover {
   -webkit-order: 3;
   order: 3;
   resize: vertical;
-  border: solid 1px #C6C6C6;
+  border: solid 1px #c6c6c6;
   -webkit-appearance: none;
-  transition: all 400ms ease !important;
 }
 
 .select-input {
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: 14px;
   padding: 8px 18px;
   line-height: 14px;
@@ -632,7 +807,7 @@ a:hover {
   width: 100%;
   min-width: 10rem;
   min-height: 40px;
-  border: solid 1px #C6C6C6;
+  border: solid 1px #c6c6c6;
   transition: all 400ms ease !important;
 }
 
@@ -640,140 +815,51 @@ a:hover {
 .select-input:focus,
 .text-area:focus {
   outline: none;
-  border: solid 1px #11939A;
+  border: solid 1px #276ef1;
 }
 
-.card {
-  min-width: 135px;
-  width: 100%;
-  flex-grow: 1;
-  background-color: #ffffff;
-  border: solid 1px #E0E0E0;
-  margin-bottom: 20px;
-}
-
-.card-icon {
-  font-size: 60px;
-  color: #282828;
-}
-
-.card-header {
-  font-size: 16px;
-  font-weight: 600;
-  min-height: 1.75rem;
-  color: #282828;
-  overflow: hidden;
-  overflow-wrap: break-word;
-  text-overflow: ellipsis;
-  word-wrap: break-word;
-  border-bottom: 1px solid #C6C6C6;
-}
-
-.card-title {
-  font-weight: 600;
-  padding: 12px;
-  margin: 0;
-}
-
-.card-content {
-  font-size: 14px;
-  font-weight: 400;
-  padding: 12px;
-  color: #5a6872;
-  min-height: 3.75rem;
-}
-
-.card-footer {
-  position: relative;
-  padding: 12px;
-  min-height: 40px;
-  width: 100%;
-}
-
-.alert {
-  font-size: 14rem;
-  font-weight: 400;
-  line-height: 1.125rem;
-  letter-spacing: 0.16px;
-  display: -webkit-flex;
+.list-group {
   display: flex;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  height: auto;
-  min-height: 3rem;
-  min-width: 18rem;
-  color: #282828;
-  margin-top: 16px;
-  margin-bottom: 16px;  
-}
-
-.alert-info {
-  border-left: 3px solid #276EF1;
-  background: #e3eefd;
-}
-
-.alert-error {
-  border-left: 3px solid #f23838;
-  background: #fde7e7;
-}
-
-.alert-warn {
-  border-left: 3px solid #f2a007;
-  background: #fef1d8;
-}
-
-.alert-success {
-  border-left: 3px solid #33a650;
-  background: #e2f6e7;
-}
-
-.alert-details {
-  display: -webkit-flex;
-  display: flex;
-  margin: 0 1rem;
-}
-
-.alert-text-wrapper {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  align-items: center;
-  padding: 0.75rem 0;
-}
-
-.alert-title {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.125rem;
-  letter-spacing: 0.16px;
-  margin: 0 0.5rem 0.5rem 0;
-  white-space: nowrap;
-}
-
-.alert-message {
+  flex-direction: column;
+  padding-left: 0;
   margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.125rem;
-  letter-spacing: 0.16px;
-  word-break: break-word;
 }
 
-.alert-close-button {
-  outline: 2px solid transparent;
-  outline-offset: -2px;
-  background: transparent;
-  border: none;
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 16px 16px 24px 16px;
+  margin-bottom: 0;
+  background-color: #ffffff;
+  border: 1px solid #d1d5da;
   cursor: pointer;
-  padding: 0;
-  height: 3rem;
-  width: 3rem;
-  min-width: 3rem;
-  max-width: 3rem;
-  transition: outline 0.11s cubic-bezier(0.2, 0, 0.38, 0.9),
-    background-color 0.11s cubic-bezier(0.2, 0, 0.38, 0.9);
+  transition: 0.3s;
+}
+
+.list-group-item + .list-group-item {
+  border-top-width: 0;
+}
+
+.list-group-item:hover {
+  background-color: #e5e5e5;
+}
+
+.list-group-item.active {
+  background-color: #e5e5e5;
+  cursor: unset;
+}
+
+.loading {
+  color: #7952b3;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  border: 0.25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: loading 0.75s linear infinite;
+  animation: loading 0.75s linear infinite;
 }
 
 .navbar {
@@ -928,6 +1014,61 @@ a:hover {
   }
 }
 
+.radio {
+  display: block;
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radio-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #ffffff;
+  border: 1px solid #171717;
+  border-radius: 50%;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio input:checked ~ .radio-checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio .radio-checkmark:after {
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #276ef1;
+}
+
 .sidenav-wrapper {
   height: 100%;
   overflow: hidden;
@@ -948,6 +1089,7 @@ a:hover {
   z-index: 9999;
   background-color: #171717;
   transition: 0.5s;
+  overflow-x: hidden;
 }
 
 .sidenav-content {
@@ -955,7 +1097,8 @@ a:hover {
   max-height: 100%;
   padding-bottom: 16px;
   padding-top: 75px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .sidenav-brand {
@@ -991,7 +1134,7 @@ a:hover {
 
 .sidenav-link.active {
   opacity: 0.8;
-  border-left: 4px solid #11939A;
+  border-left: 4px solid #7952b3;
   background-color: #171717;
 }
 
@@ -1022,8 +1165,53 @@ a:hover {
   }
 }
 
-.tag-wrapper {
-  margin-bottom: 5px;
+/* Style the tab */
+.tab {
+  padding: 0;
+  margin: 0px 0px 0px 10px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+  display: flex;
+  list-style: none;
+}
+
+/* Style the buttons inside the tab */
+.tab-link {
+  transition: 0.2s;
+  font-family: "Barlow", sans-serif;
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 12px 42px 12px 16px;
+  font-size: 14px;
+  border-top: 3px solid #e5e5e5;
+}
+
+/* Change background color of buttons on hover */
+.tab-link:hover {
+  border-top: 3px solid #cccccc;
+}
+
+/* Create an active/current tablink class */
+.tab-link.active {
+  background-color: #ffffff;
+  border-top: 3px solid #7952b3;
+}
+
+/* Style the tab content */
+.tab-pane {
+  width: 100%;
+  background: #ffffff;
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+}
+
+.tab-pane.show {
+  display: block;
 }
 
 .tag {
@@ -1033,10 +1221,14 @@ a:hover {
   padding: 0.3rem 0.6rem;
 }
 
+.tag-wrapper {
+  margin-bottom: 5px;
+}
+
 .tag-blue {
-  color: #276EF1;
+  color: #276ef1;
   background-color: #e3eefd;
-  border: solid 1px #276EF1;
+  border: solid 1px #276ef1;
 }
 
 .tag-green {
@@ -1065,136 +1257,6 @@ a:hover {
   cursor: pointer;
 }
 
-.dropdown {
-  position: relative;
-}
-
-.dropdown-toggle::after {
-  background: #ffffff;
-  display: inline-block;
-  margin-left: 0.325em;
-  vertical-align: 0.2em;
-  content: "";
-  border-top: 0.3em solid;
-  border-right: 0.3em solid transparent;
-  border-bottom: 0;
-  border-left: 0.3em solid transparent;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  display: none;
-  float: left;
-  min-width: 10rem;
-  margin: 0.125rem 0 0;
-  font-size: 14px;
-  color: #282828;
-  text-align: left;
-  list-style: none;
-  background-color: #f4f4f4;
-  background-clip: padding-box;
-}
-
-.dropdown-menu.show {
-  display: block;
-}
-
-.dropdown-item {
-  text-decoration: none;
-  display: block;
-  width: 100%;
-  padding: 11px 16px;
-  clear: both;
-  line-height: 20px;
-  font-weight: 400;
-  color: #212529;
-  text-align: inherit;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0;
-}
-
-.dropdown-item:hover {
-  text-decoration: none;
-  color: #212529;
-  background-color: #e5e5e5;
-}
-
-.breadcrumb {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 8px 1rem;
-  margin: 8px 0;
-  list-style: none;
-}
-
-.breadcrumb-item + .breadcrumb-item {
-  padding-left: 0.5rem;
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-  display: inline-block;
-  padding-right: 0.5rem;
-  color: #282828;
-  content: "/";
-}
-
-.breadcrumb-item + .breadcrumb-item:hover::before {
-  text-decoration: none;
-}
-
-.breadcrumb-item a {
-  text-decoration: none;
-  color: #11939A;
-  cursor: pointer;
-}
-
-.breadcrumb-item a:hover {
-  text-decoration: underline;
-}
-
-.breadcrumb-item.active a {
-  color: #8d8d8d;
-  cursor: unset;
-}
-
-.breadcrumb-item.active a:hover {
-  text-decoration: none;
-}
-
-.list-group {
-  display: flex;
-  flex-direction: column;
-  padding-left: 0;
-  margin-bottom: 0;
-}
-
-.list-group-item {
-  position: relative;
-  display: block;
-  padding: 16px 16px 24px 16px;
-  margin-bottom: 0;
-  background-color: #ffffff;
-  border: 1px solid #d1d5da;
-  cursor: pointer;
-}
-
-.list-group-item + .list-group-item {
-  border-top-width: 0;
-}
-
-.list-group-item:hover{
-  background-color: #e5e5e5;
-}
-
-.list-group-item.active  {
-  background-color: #e5e5e5;
-  cursor: unset;
-}
-
 @-webkit-keyframes loading {
   to {
     transform: rotate(360deg);
@@ -1205,19 +1267,6 @@ a:hover {
   to {
     transform: rotate(360deg);
   }
-}
-
-.loading {
-  color: #11939A;
-  display: inline-block;
-  width: 2rem;
-  height: 2rem;
-  vertical-align: text-bottom;
-  border: 0.25em solid currentColor;
-  border-right-color: transparent;
-  border-radius: 50%;
-  -webkit-animation: loading .75s linear infinite;
-  animation: loading .75s linear infinite;
 }
 
 .toast {
@@ -1234,9 +1283,24 @@ a:hover {
   min-width: 245px;
   color: #282828;
   margin-top: 16px;
-  margin-bottom: 16px;  
+  margin-bottom: 16px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   background: #ffffff;
+}
+
+.toast-title {
+  color: #282828;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.125rem;
+  letter-spacing: 0.16px;
+  white-space: nowrap;
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 13px 0 7px 0;
 }
 
 .toast-details {
@@ -1254,25 +1318,11 @@ a:hover {
   align-items: center;
 }
 
-.toast-title {
-  color: #282828;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.125rem;
-  letter-spacing: 0.16px;
-  white-space: nowrap;
-  width: 100%;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  padding: 13px 0 7px 0;
-}
-
 .toast-time {
   margin-right: 32px;
   font-size: 11.2px;
-  font-weight: 500;
+  font-weight: 600;
+  color: #7952b3;
 }
 
 .toast-message {
