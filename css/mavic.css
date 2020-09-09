@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-@import url("https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
 html {
   box-sizing: border-box;
@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: "Barlow", sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   background: #f9f9f9;
   font-size: 0.875rem;
@@ -45,7 +45,7 @@ h6,
 .h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -80,6 +80,7 @@ h6,
 }
 
 p {
+  line-height: 20px;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -301,6 +302,7 @@ a:hover {
   margin-right: auto !important;
 }
 
+/* Accordion */
 .accordion {
   position: relative;
   width: 100%;
@@ -320,7 +322,7 @@ a:hover {
   padding-left: 24px;
   border: 0px;
   min-height: 32px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .accordion-icon {
@@ -342,7 +344,9 @@ a:hover {
 .accordion-content.show {
   display: block;
 }
+/* Accordion */
 
+/* Alert */
 .alert {
   font-size: 14rem;
   font-weight: 400;
@@ -372,7 +376,7 @@ a:hover {
 
 .alert-title {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.125rem;
   letter-spacing: 0.16px;
   margin: 0 0.5rem 0 0;
@@ -428,7 +432,9 @@ a:hover {
   transition: outline 0.11s cubic-bezier(0.2, 0, 0.38, 0.9),
     background-color 0.11s cubic-bezier(0.2, 0, 0.38, 0.9);
 }
+/* Alert */
 
+/* Breadcrumb */
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
@@ -470,9 +476,11 @@ a:hover {
 .breadcrumb-item.active a:hover {
   text-decoration: none;
 }
+/* Breadcrumb */
 
+/* Button */
 .btn {
-  font-family: "Barlow", sans-serif;
+  font-family: 'Roboto', sans-serif;
   position: relative;
   display: inline-block;
   padding: 8px 20px;
@@ -563,7 +571,9 @@ a:hover {
 .btn-danger:hover {
   background-color: #d80e0e;
 }
+/* Button */
 
+/* Card */
 .card {
   min-width: 135px;
   width: 100%;
@@ -580,7 +590,7 @@ a:hover {
 }
 
 .card-header {
-  font-weight: 600;
+  font-weight: 700;
   min-height: 1.75rem;
   color: #282828;
   overflow: hidden;
@@ -590,7 +600,7 @@ a:hover {
 }
 
 .card-title {
-  font-weight: 600;
+  font-weight: 700;
   padding: 12px;
   margin: 0;
 }
@@ -609,10 +619,12 @@ a:hover {
   min-height: 40px;
   width: 100%;
 }
+/* Card */
 
+/* Checkbox */
 .checkbox label {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .checkbox {
@@ -673,7 +685,9 @@ a:hover {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+/* Checkbox */
 
+/* Menu */
 .menu {
   position: relative;
 }
@@ -731,7 +745,9 @@ a:hover {
   color: #212529;
   background-color: #e5e5e5;
 }
+/* Menu */
 
+/* Form */
 .form-inline {
   display: flex;
   flex-flow: row wrap;
@@ -754,7 +770,7 @@ a:hover {
 }
 
 .form-group label {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 12px;
 }
 
@@ -772,7 +788,7 @@ a:hover {
 }
 
 .text-input {
-  font-family: "Barlow", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   padding: 8px 18px;
   line-height: 14px;
@@ -785,7 +801,7 @@ a:hover {
 }
 
 .text-area {
-  font-family: "Barlow", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   padding: 12px 18px;
   line-height: 17px;
@@ -802,7 +818,7 @@ a:hover {
 }
 
 .select-input {
-  font-family: "Barlow", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   padding: 8px 18px;
   line-height: 14px;
@@ -820,7 +836,9 @@ a:hover {
   outline: none;
   border: solid 1px #276ef1;
 }
+/* Form */
 
+/* List */
 .list-group {
   display: flex;
   flex-direction: column;
@@ -851,7 +869,9 @@ a:hover {
   background-color: #e5e5e5;
   cursor: unset;
 }
+/* List */
 
+/* Loading */
 .loading {
   color: #fc541c;
   display: inline-block;
@@ -865,6 +885,20 @@ a:hover {
   animation: loading 0.75s linear infinite;
 }
 
+@-webkit-keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Loading */
+
+/* Navbar */
 .navbar {
   margin: 0;
   overflow: hidden;
@@ -1027,7 +1061,9 @@ a:hover {
     order: 3;
   }
 }
+/* Navbar */
 
+/* Radio */
 .radio {
   display: block;
   position: relative;
@@ -1082,7 +1118,9 @@ a:hover {
   border-radius: 50%;
   background: #276ef1;
 }
+/* Radio */
 
+/* Sidenav */
 .sidenav {
   height: 100%;
   width: 244px;
@@ -1184,8 +1222,9 @@ a:hover {
     display: block;
   }
 }
+/* Sidenav */
 
-/* Style the tab */
+/* Tab */
 .tab {
   padding: 0;
   margin: 0px 0px 0px 10px;
@@ -1198,7 +1237,7 @@ a:hover {
 /* Style the buttons inside the tab */
 .tab-link {
   transition: 0.2s;
-  font-family: "Barlow", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: inherit;
   float: left;
   border: none;
@@ -1233,7 +1272,9 @@ a:hover {
 .tab-pane.show {
   display: block;
 }
+/* Tab */
 
+/* Tag */
 .tag {
   display: inline-block;
   font-size: 13px;
@@ -1276,19 +1317,9 @@ a:hover {
   margin-left: 4px;
   cursor: pointer;
 }
+/* Tag */
 
-@-webkit-keyframes loading {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes loading {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+/* Toast */
 .toast {
   position: relative;
   font-size: 12rem;
@@ -1341,7 +1372,7 @@ a:hover {
 .toast-time {
   margin-right: 32px;
   font-size: 11.2px;
-  font-weight: 600;
+  font-weight: 700;
   color: #fc541c;
 }
 
@@ -1371,3 +1402,4 @@ a:hover {
   transition: outline 0.11s cubic-bezier(0.2, 0, 0.38, 0.9),
     background-color 0.11s cubic-bezier(0.2, 0, 0.38, 0.9);
 }
+/* Toast */
