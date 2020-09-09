@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 
 html {
   box-sizing: border-box;
@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   background: #f9f9f9;
   font-size: 0.875rem;
@@ -80,7 +80,6 @@ h6,
 }
 
 p {
-  line-height: 20px;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -480,7 +479,7 @@ a:hover {
 
 /* Button */
 .btn {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   position: relative;
   display: inline-block;
   padding: 8px 20px;
@@ -788,7 +787,7 @@ a:hover {
 }
 
 .text-input {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   padding: 8px 18px;
   line-height: 14px;
@@ -801,7 +800,7 @@ a:hover {
 }
 
 .text-area {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   padding: 12px 18px;
   line-height: 17px;
@@ -818,7 +817,7 @@ a:hover {
 }
 
 .select-input {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   padding: 8px 18px;
   line-height: 14px;
@@ -1237,7 +1236,7 @@ a:hover {
 /* Style the buttons inside the tab */
 .tab-link {
   transition: 0.2s;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: inherit;
   float: left;
   border: none;
@@ -1333,8 +1332,7 @@ a:hover {
   max-width: 18rem;
   min-width: 245px;
   color: #282828;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin: 16px 10px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   background: #ffffff;
 }
