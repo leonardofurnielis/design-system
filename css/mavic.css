@@ -1014,9 +1014,11 @@ container-fluid {
 }
 
 .navbar-light,
+.navbar-light .navbar-content .navbar-list,
 .navbar-light .navbar-content .navbar-list .navbar-link,
 .navbar-light .navbar-content .navbar-link {
   background: #e5e5e5 !important;
+  background-color: #e5e5e5 !important;
   color: #171717 !important;
 }
 
@@ -1238,7 +1240,7 @@ container-fluid {
 
   .bd-content {
     flex: 0 0 100%;
-   }
+  }
 
   .bd-link,
   .bd-brand {

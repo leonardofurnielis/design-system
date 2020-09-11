@@ -30,14 +30,16 @@ function sidenavToggleListener(event) {
 
 function navbarToggleListener(event) {
   const element = event.target;
-
+  console.log(element.id);
   if (
     (element.classList.contains("navbar-menu-icon") ||
       element.classList.contains("navbar-menu")) &&
-    (element.id === "navbar-menu" || element.parentElement.id === "navbar-menu")
+    (element.id === "global-navbar-menu" ||
+      element.parentElement.id === "global-navbar-menu")
   ) {
+    console.log(element);
     const nav = document.querySelector("#global-navbar");
-    const menuIcon = document.querySelector("#navbar-menu");
+    const menuIcon = document.querySelector("#global-navbar-menu");
     const body = document.querySelector("body");
 
     menuIcon.getElementsByClassName("one")[0].classList.toggle("show");
@@ -52,7 +54,7 @@ function navbarHideListener(event) {
 
   if (element.classList.contains("navbar-link")) {
     const nav = document.querySelector("#global-navbar");
-    const menuIcon = document.querySelector("#navbar-menu");
+    const menuIcon = document.querySelector("#global-navbar-menu");
 
     if (menuIcon) {
       nav.classList.remove("show");
@@ -87,9 +89,7 @@ function menuToggleListener(event) {
 
   if (element.parentElement.classList.contains("menu")) {
     const menus = document.querySelectorAll(".menu-menu.show");
-    const menu = element.parentElement.getElementsByClassName(
-      "menu-menu"
-    )[0];
+    const menu = element.parentElement.getElementsByClassName("menu-menu")[0];
 
     menu.classList.toggle("show");
     menus.forEach((menu) => {
@@ -102,10 +102,7 @@ function menuHideListener(event) {
   const element = event.target;
   const menus = document.querySelectorAll(".menu-menu.show");
 
-  if (
-    !element.parentElement.classList.contains("menu") &&
-    menus.length > 0
-  ) {
+  if (!element.parentElement.classList.contains("menu") && menus.length > 0) {
     menus.forEach((menu) => {
       menu.classList.remove("show");
     });
