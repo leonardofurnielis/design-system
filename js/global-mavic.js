@@ -16,11 +16,11 @@ function sidenavToggleListener(event) {
   if (
     (element.classList.contains("navbar-menu-icon") ||
       element.classList.contains("navbar-menu")) &&
-    (element.id === "sidenav-menu" ||
-      element.parentElement.id === "sidenav-menu")
+    (element.id === "bd-sidebar-menu" ||
+      element.parentElement.id === "bd-sidebar-menu")
   ) {
-    const nav = document.querySelector("#global-sidenav");
-    const menuIcon = document.querySelector("#sidenav-menu");
+    const nav = document.querySelector("#global-bd-sidebar");
+    const menuIcon = document.querySelector("#bd-sidebar-menu");
 
     nav.classList.toggle("show");
     menuIcon.getElementsByClassName("one")[0].classList.toggle("show");
