@@ -8,6 +8,10 @@ window.onload = function () {
   document.addEventListener("click", menuHideListener);
   document.addEventListener("click", listGroupSelectionListener);
   document.addEventListener("click", tabHandlerListener);
+  document.addEventListener("click", carouselNextPrev);
+  document.addEventListener("click", carouselIndicators);
+
+  showCarouselSlides(1);
 };
 
 function sidenavToggleListener(event) {
@@ -30,14 +34,12 @@ function sidenavToggleListener(event) {
 
 function navbarToggleListener(event) {
   const element = event.target;
-  console.log(element.id);
   if (
     (element.classList.contains("navbar-menu-icon") ||
       element.classList.contains("navbar-menu")) &&
     (element.id === "global-navbar-menu" ||
       element.parentElement.id === "global-navbar-menu")
   ) {
-    console.log(element);
     const nav = document.querySelector("#global-navbar");
     const menuIcon = document.querySelector("#global-navbar-menu");
     const body = document.querySelector("body");
@@ -66,7 +68,10 @@ function navbarHideListener(event) {
 
 function accordionToggleListener(event) {
   const element = event.target;
-  if (element.parentElement.classList.contains("accordion")) {
+  if (
+    element.parentElement &&
+    element.parentElement.classList.contains("accordion")
+  ) {
     const accordion = element.parentElement.getElementsByClassName(
       "accordion-content"
     )[0];
@@ -87,7 +92,10 @@ function accordionToggleListener(event) {
 function menuToggleListener(event) {
   const element = event.target;
 
-  if (element.parentElement.classList.contains("menu")) {
+  if (
+    element.parentElement &&
+    element.parentElement.classList.contains("menu")
+  ) {
     const menus = document.querySelectorAll(".menu-menu.show");
     const menu = element.parentElement.getElementsByClassName("menu-menu")[0];
 
@@ -102,7 +110,11 @@ function menuHideListener(event) {
   const element = event.target;
   const menus = document.querySelectorAll(".menu-menu.show");
 
-  if (!element.parentElement.classList.contains("menu") && menus.length > 0) {
+  if (
+    element.parentElement &&
+    !element.parentElement.classList.contains("menu") &&
+    menus.length > 0
+  ) {
     menus.forEach((menu) => {
       menu.classList.remove("show");
     });
@@ -111,12 +123,15 @@ function menuHideListener(event) {
 
 function listGroupSelectionListener(event) {
   const element = event.target;
-  if (element.parentElement.classList.contains("list-group-selection")) {
-    const listItens = element.parentElement.querySelectorAll(
+  if (
+    element.parentElement &&
+    element.parentElement.classList.contains("list-group-selection")
+  ) {
+    const listItems = element.parentElement.querySelectorAll(
       ".list-group-item.active"
     );
 
-    listItens.forEach((listItem) => {
+    listItems.forEach((listItem) => {
       listItem.classList.remove("active");
     });
 
@@ -126,7 +141,10 @@ function listGroupSelectionListener(event) {
 
 function tabHandlerListener(event) {
   const element = event.target;
-  if (element.parentElement.classList.contains("tab")) {
+  if (
+    element.parentElement &&
+    element.parentElement.classList.contains("tab")
+  ) {
     const tabParent = element.parentElement;
     const ariaControl = element.attributes["aria-controls"].value;
 
@@ -147,5 +165,76 @@ function tabHandlerListener(event) {
 
     tabContent.querySelector("#" + ariaControl).classList.add("show");
     element.classList.add("active");
+  }
+}
+
+// Carousel
+
+const carouselIndexDict = {};
+function showCarouselSlides(n) {
+  let i;
+
+  const carousel = document.getElementsByClassName("carousel-slide");
+  for (let c = 0; c < carousel.length; c++) {
+    if (!carouselIndexDict[carousel[c].id]) {
+      carouselIndexDict[carousel[c].id] = 1;
+    }
+    const slides = carousel[c].getElementsByClassName("carousel-item");
+    const indicators = carousel[c].getElementsByClassName(
+      "carousel-indicators-item"
+    );
+
+    if (n > slides.length) {
+      carouselIndexDict[carousel[c].id] = 1;
+    }
+
+    if (n < 1) {
+      carouselIndexDict[carousel[c].id] = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    for (i = 0; i < indicators.length; i++) {
+      indicators[i].className = indicators[i].className.replace(" active", "");
+    }
+
+    indicators[carouselIndexDict[carousel[c].id] - 1].className += " active";
+    slides[carouselIndexDict[carousel[c].id] - 1].style.display = "block";
+  }
+}
+// Carousel control next/previous controls
+function carouselNextPrev(event) {
+  const element = event.target;
+  if (
+    element.parentElement &&
+    element.parentElement.parentElement &&
+    element.parentElement.parentElement.classList.contains("carousel-slide") &&
+    (element.classList.contains("carousel-control-next-icon") ||
+      element.classList.contains("carousel-control-prev-icon"))
+  ) {
+    const carousel = element.parentElement.parentElement;
+    if (element.classList.contains("carousel-control-next")) {
+      showCarouselSlides((carouselIndexDict[carousel.id] += 1));
+    } else {
+      showCarouselSlides((carouselIndexDict[carousel.id] += -1));
+    }
+  }
+}
+// Carousel thumbnail controls
+function carouselIndicators(event) {
+  const element = event.target;
+  if (
+    element.parentElement &&
+    element.parentElement.classList.contains("carousel-indicators")
+  ) {
+    const carousel = element.parentElement.parentElement;
+
+    showCarouselSlides(
+      (carouselIndexDict[carousel.id] = Number(
+        element.attributes["data-slide-to"].value
+      ))
+    );
   }
 }
