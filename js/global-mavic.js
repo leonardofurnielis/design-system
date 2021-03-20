@@ -7,9 +7,9 @@ window.onload = function () {
   document.addEventListener("click", sidenavToggleListener);
   // Accordion
   document.addEventListener("click", accordionToggleListener);
-  // Menu
-  document.addEventListener("click", menuToggleListener);
-  document.addEventListener("click", menuHideListener);
+  // Dropdown
+  document.addEventListener("click", dropdownToggleListener);
+  document.addEventListener("click", dropdownHideListener);
   // List
   document.addEventListener("click", listSelectionListener);
   // Tab
@@ -98,35 +98,37 @@ function accordionToggleListener(event) {
     accordion.classList.toggle("show");
   }
 }
-// Menu
-function menuToggleListener(event) {
+// Dropdown
+function dropdownToggleListener(event) {
   const element = event.target;
 
   if (
     element.parentElement &&
-    element.parentElement.classList.contains("menu")
+    element.parentElement.classList.contains("dropdown")
   ) {
-    const menus = document.querySelectorAll(".menu-menu.show");
-    const menu = element.parentElement.getElementsByClassName("menu-menu")[0];
+    const dropdownList = document.querySelectorAll(".dropdown-menu.show");
+    const dropdown = element.parentElement.getElementsByClassName(
+      "dropdown-menu"
+    )[0];
 
-    menu.classList.toggle("show");
-    menus.forEach((menu) => {
+    dropdown.classList.toggle("show");
+    dropdownList.forEach((menu) => {
       menu.classList.remove("show");
     });
   }
 }
 
-function menuHideListener(event) {
+function dropdownHideListener(event) {
   const element = event.target;
-  const menus = document.querySelectorAll(".menu-menu.show");
+  const dropdownList = document.querySelectorAll(".dropdown-menu.show");
 
   if (
     element.parentElement &&
-    !element.parentElement.classList.contains("menu") &&
-    menus.length > 0
+    !element.parentElement.classList.contains("dropdown") &&
+    dropdownList.length > 0
   ) {
-    menus.forEach((menu) => {
-      menu.classList.remove("show");
+    dropdownList.forEach((dropdown) => {
+      dropdown.classList.remove("show");
     });
   }
 }
