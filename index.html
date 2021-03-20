@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Mavic Design System</title>
+    <title>Design System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="shortcut icon" href="./images/logo.png" />
@@ -43,7 +43,7 @@
           <a class="bd-link" href="#button">Button</a>
           <a class="bd-link" href="#card">Card</a>
           <a class="bd-link" href="#checkbox">Checkbox</a>
-          <a class="bd-link" href="#menu">Menu</a>
+          <a class="bd-link" href="#dropdown">Dropdown</a>
           <a class="bd-link" href="#form">Form</a>
           <a class="bd-link" href="#list">List</a>
           <a class="bd-link" href="#loading">Loading</a>
@@ -210,72 +210,39 @@
           <span class="spacing-03"></span>
           <button class="btn btn-secondary" type="button">Secondary</button>
           <span class="spacing-03"></span>
-          <button class="btn btn-success" type="button">Success</button>
+          <button class="btn btn-ghost" type="button">Success</button>
           <span class="spacing-03"></span>
           <button class="btn btn-danger" type="button">Danger</button>
         </div>
 
         <span class="spacing-05"></span>
         <div class="row">
-          <button class="btn btn-small" type="button">Basic</button>
+          <button class="btn btn-md" type="button">Basic</button>
           <span class="spacing-03"></span>
-          <button class="btn btn-primary btn-small" type="button">
-            Primary
-          </button>
+          <button class="btn btn-primary btn-md" type="button">Primary</button>
           <span class="spacing-03"></span>
-          <button class="btn btn-secondary btn-small" type="button">
+          <button class="btn btn-secondary btn-md" type="button">
             Secondary
           </button>
           <span class="spacing-03"></span>
-          <button class="btn btn-success btn-small" type="button">
-            Success
-          </button>
+          <button class="btn btn-ghost btn-md" type="button">Success</button>
           <span class="spacing-03"></span>
-          <button class="btn btn-danger btn-small" type="button">Danger</button>
+          <button class="btn btn-danger btn-md" type="button">Danger</button>
         </div>
+
         <span class="spacing-05"></span>
         <div class="row">
-          <button class="btn btn-flat" type="button">
-            <i class="material-icons large">home</i>
+          <button class="btn btn-sm" type="button">Basic</button>
+          <span class="spacing-03"></span>
+          <button class="btn btn-primary btn-sm" type="button">Primary</button>
+          <span class="spacing-03"></span>
+          <button class="btn btn-secondary btn-sm" type="button">
+            Secondary
           </button>
           <span class="spacing-03"></span>
-          <button class="btn btn-primary btn-flat" type="button">
-            <i class="material-icons large">home</i>
-          </button>
+          <button class="btn btn-ghost btn-sm" type="button">Success</button>
           <span class="spacing-03"></span>
-          <button class="btn btn-secondary btn-flat" type="button">
-            <i class="material-icons large">home</i>
-          </button>
-          <span class="spacing-03"></span>
-          <button class="btn btn-success btn-flat" type="button">
-            <i class="material-icons large">home</i>
-          </button>
-          <span class="spacing-03"></span>
-          <button class="btn btn-danger btn-flat" type="button">
-            <i class="material-icons large">home</i>
-          </button>
-        </div>
-        <span class="spacing-05"></span>
-        <div class="row">
-          <button class="btn btn-flat-small" type="button">
-            <i class="material-icons">add</i>
-          </button>
-          <span class="spacing-03"></span>
-          <button class="btn btn-primary btn-flat-small" type="button">
-            <i class="material-icons">add</i>
-          </button>
-          <span class="spacing-03"></span>
-          <button class="btn btn-secondary btn-flat-small" type="button">
-            <i class="material-icons">add</i>
-          </button>
-          <span class="spacing-03"></span>
-          <button class="btn btn-success btn-flat-small" type="button">
-            <i class="material-icons">add</i>
-          </button>
-          <span class="spacing-03"></span>
-          <button class="btn btn-danger btn-flat-small" type="button">
-            <i class="material-icons">add</i>
-          </button>
+          <button class="btn btn-danger btn-sm" type="button">Danger</button>
         </div>
         <span class="spacing-05"></span>
         <h3 id="card">Card</h3>
@@ -359,24 +326,24 @@
         </div>
 
         <span class="spacing-05"></span>
-        <h3 id="menu">Menu</h3>
+        <h3 id="dropdown">Dropdown</h3>
         <span class="spacing-05"></span>
         <div class="row">
-          <div class="menu">
-            <button class="btn menu-toggle" type="button">Menu</button>
-            <div class="menu-menu">
-              <a class="menu-item" href="#">Action</a>
-              <a class="menu-item" href="#">Another action</a>
-              <a class="menu-item" href="#">Something else here</a>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button">Dropdown</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item">Action</a>
+              <a class="dropdown-item">Another action</a>
+              <a class="dropdown-item">Something else here</a>
             </div>
           </div>
           <span class="spacing-03"></span>
-          <div class="menu">
-            <button class="btn menu-toggle" type="button">Menu</button>
-            <div class="menu-menu">
-              <a class="menu-item" href="#">Action</a>
-              <a class="menu-item" href="#">Another action</a>
-              <a class="menu-item" href="#">Something else here</a>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button">Dropdown</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item">Action</a>
+              <a class="dropdown-item">Another action</a>
+              <a class="dropdown-item">Something else here</a>
             </div>
           </div>
         </div>
@@ -386,7 +353,7 @@
         <span class="spacing-05"></span>
         <div class="row">
           <div class="form-group col-3">
-            <label>Name:</label>
+            <label class="form-label">Name:</label>
             <input
               type="text"
               class="form-control text-input"
@@ -394,32 +361,21 @@
             />
           </div>
           <div class="form-group col-3">
-            <label>Last Name:</label>
+            <label class="form-label">Last Name:</label>
             <input type="text" class="form-control text-input" />
           </div>
         </div>
         <div class="row">
           <div class="form-group col-3">
-            <label>Message:</label>
+            <label class="form-label">Message:</label>
             <textarea class="form-control text-area"></textarea>
           </div>
           <div class="form-group col-4">
-            <label>Select:</label>
+            <label class="form-label">Select:</label>
             <select class="form-control select-input">
               <option>Sim</option>
               <option>Não</option>
             </select>
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-4">
-            <div class="form-inline">
-              <div class="input-group">
-                <label>Name:</label>
-                <input type="text" class="form-control-inline text-input" />
-                <button class="btn">Button</button>
-              </div>
-            </div>
           </div>
         </div>
 
