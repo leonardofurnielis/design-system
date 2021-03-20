@@ -1,37 +1,27 @@
 window.onload = function () {
   ("use strict");
+  // Navbar
   document.addEventListener("click", navbarToggleListener);
   document.addEventListener("click", navbarHideListener);
-  document.addEventListener("click", accordionToggleListener);
+  // Sidenav
   document.addEventListener("click", sidenavToggleListener);
+  // Accordion
+  document.addEventListener("click", accordionToggleListener);
+  // Menu
   document.addEventListener("click", menuToggleListener);
   document.addEventListener("click", menuHideListener);
-  document.addEventListener("click", listGroupSelectionListener);
+  // List
+  document.addEventListener("click", listSelectionListener);
+  // Tab
   document.addEventListener("click", tabHandlerListener);
-  document.addEventListener("click", carouselNextPrev);
-  document.addEventListener("click", carouselIndicators);
+  // Carousel
+  document.addEventListener("click", carouselNextPrevListener);
+  document.addEventListener("click", carouselIndicatorsListener);
 
-  showCarouselSlides(1);
+  carouselInit(1);
 };
 
-function sidenavToggleListener(event) {
-  const element = event.target;
-
-  if (
-    (element.classList.contains("navbar-menu-icon") ||
-      element.classList.contains("navbar-menu")) &&
-    (element.id === "bd-sidebar-menu" ||
-      element.parentElement.id === "bd-sidebar-menu")
-  ) {
-    const nav = document.querySelector("#global-bd-sidebar");
-    const menuIcon = document.querySelector("#bd-sidebar-menu");
-
-    nav.classList.toggle("show");
-    menuIcon.getElementsByClassName("one")[0].classList.toggle("show");
-    menuIcon.getElementsByClassName("two")[0].classList.toggle("show");
-  }
-}
-
+// Navbar
 function navbarToggleListener(event) {
   const element = event.target;
   if (
@@ -66,6 +56,26 @@ function navbarHideListener(event) {
   }
 }
 
+// Sidenav
+function sidenavToggleListener(event) {
+  const element = event.target;
+
+  if (
+    (element.classList.contains("navbar-menu-icon") ||
+      element.classList.contains("navbar-menu")) &&
+    (element.id === "bd-sidebar-menu" ||
+      element.parentElement.id === "bd-sidebar-menu")
+  ) {
+    const nav = document.querySelector("#global-bd-sidebar");
+    const menuIcon = document.querySelector("#bd-sidebar-menu");
+
+    nav.classList.toggle("show");
+    menuIcon.getElementsByClassName("one")[0].classList.toggle("show");
+    menuIcon.getElementsByClassName("two")[0].classList.toggle("show");
+  }
+}
+
+// Accordion
 function accordionToggleListener(event) {
   const element = event.target;
   if (
@@ -88,7 +98,7 @@ function accordionToggleListener(event) {
     accordion.classList.toggle("show");
   }
 }
-
+// Menu
 function menuToggleListener(event) {
   const element = event.target;
 
@@ -121,7 +131,8 @@ function menuHideListener(event) {
   }
 }
 
-function listGroupSelectionListener(event) {
+// List
+function listSelectionListener(event) {
   const element = event.target;
   if (
     element.parentElement &&
@@ -139,6 +150,7 @@ function listGroupSelectionListener(event) {
   }
 }
 
+// Tab
 function tabHandlerListener(event) {
   const element = event.target;
   if (
@@ -146,7 +158,7 @@ function tabHandlerListener(event) {
     element.parentElement.classList.contains("tab")
   ) {
     const tabParent = element.parentElement;
-    const ariaControl = element.attributes["aria-controls"].value;
+    const ariaControl = element.attributes["aria-control"].value;
 
     const tabContent = document.querySelectorAll(
       "#" + tabParent.id + ".tab-content"
@@ -169,27 +181,29 @@ function tabHandlerListener(event) {
 }
 
 // Carousel
-
-const carouselIndexDict = {};
-function showCarouselSlides(n) {
+const CAROUSEL_INDEX = {};
+let CAROUSEL_INTERVAL;
+function carouselInit(n) {
   let i;
 
-  const carousel = document.getElementsByClassName("carousel-slide");
+  const carousel = document.getElementsByClassName("carousel");
   for (let c = 0; c < carousel.length; c++) {
-    if (!carouselIndexDict[carousel[c].id]) {
-      carouselIndexDict[carousel[c].id] = 1;
+    if (!CAROUSEL_INDEX[carousel[c].id]) {
+      CAROUSEL_INDEX[carousel[c].id] = 1;
     }
+    clearTimeout(CAROUSEL_INTERVAL);
+    carouselInterval(carousel[c]);
     const slides = carousel[c].getElementsByClassName("carousel-item");
     const indicators = carousel[c].getElementsByClassName(
       "carousel-indicators-item"
     );
 
     if (n > slides.length) {
-      carouselIndexDict[carousel[c].id] = 1;
+      CAROUSEL_INDEX[carousel[c].id] = 1;
     }
 
     if (n < 1) {
-      carouselIndexDict[carousel[c].id] = slides.length;
+      CAROUSEL_INDEX[carousel[c].id] = slides.length;
     }
 
     for (i = 0; i < slides.length; i++) {
@@ -200,30 +214,31 @@ function showCarouselSlides(n) {
       indicators[i].className = indicators[i].className.replace(" active", "");
     }
 
-    indicators[carouselIndexDict[carousel[c].id] - 1].className += " active";
-    slides[carouselIndexDict[carousel[c].id] - 1].style.display = "block";
+    indicators[CAROUSEL_INDEX[carousel[c].id] - 1].className += " active";
+    slides[CAROUSEL_INDEX[carousel[c].id] - 1].style.display = "block";
   }
 }
 // Carousel control next/previous controls
-function carouselNextPrev(event) {
+function carouselNextPrevListener(event) {
   const element = event.target;
   if (
     element.parentElement &&
     element.parentElement.parentElement &&
-    element.parentElement.parentElement.classList.contains("carousel-slide") &&
+    element.parentElement.parentElement.classList.contains("carousel") &&
     (element.classList.contains("carousel-control-next-icon") ||
       element.classList.contains("carousel-control-prev-icon"))
   ) {
     const carousel = element.parentElement.parentElement;
-    if (element.classList.contains("carousel-control-next")) {
-      showCarouselSlides((carouselIndexDict[carousel.id] += 1));
+
+    if (element.classList.contains("carousel-control-next-icon")) {
+      carouselInit((CAROUSEL_INDEX[carousel.id] += 1));
     } else {
-      showCarouselSlides((carouselIndexDict[carousel.id] += -1));
+      carouselInit((CAROUSEL_INDEX[carousel.id] += -1));
     }
   }
 }
 // Carousel thumbnail controls
-function carouselIndicators(event) {
+function carouselIndicatorsListener(event) {
   const element = event.target;
   if (
     element.parentElement &&
@@ -231,10 +246,22 @@ function carouselIndicators(event) {
   ) {
     const carousel = element.parentElement.parentElement;
 
-    showCarouselSlides(
-      (carouselIndexDict[carousel.id] = Number(
+    carouselInit(
+      (CAROUSEL_INDEX[carousel.id] = Number(
         element.attributes["data-slide-to"].value
       ))
     );
   }
+}
+
+function carouselInterval(element) {
+  const interval = element.attributes["data-interval"]
+    ? element.attributes["data-interval"]
+    : 5000;
+  CAROUSEL_INTERVAL = setTimeout(() => {
+    const event = {
+      target: element.getElementsByClassName("carousel-control-next-icon")[0],
+    };
+    carouselNextPrevListener(event);
+  }, interval);
 }
