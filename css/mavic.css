@@ -1,43 +1,75 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-
+/* 1/3/5/6/8 */
 :root {
-  --blue: #0076e0;
-  --blue40: #78a9ff;
-  --blue20: #d0e2ff;
-  --purple: #8a3ffc;
-  --red: #da1e28;
-  --red40: #fa4d56;
-  --red20: #fcdddd;
-  --orange: #fd7e14;
-  --yellow: #f1c21b;
-  --yellow20: #fef1d8;
-  --green: #24a148;
-  --green40: #42be65;
-  --green20: #dcf7e2;
-  --white: #ffffff;
-  --gray: #161616;
-  --gray80: #393939;
-  --gray60: #6f6f6f;
-  --gray40: #a8a8a8;
-  --gray20: #cacaca;
-  --gray10: #e5e5e5;
-  --primary: #0076e0;
-  --secondary: #393939;
-  --light: #f4f4f4;
-  --dark: #393939;
-  --hover-primary: #0e54d8;
-  --hover-danger: #d1112a;
-  --hover-secondary: #161616;
-  --font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-  --gradient: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.15),
-    rgba(255, 255, 255, 0)
-  );
+  --red-1: #fff1f0;
+  --red-2: #ffa39e;
+  --red-3: #ff4d4f;
+  --red-4: #f5222d;
+  --red-5: #a8071a;
+  --orange-1: #fff7e6;
+  --orange-2: #ffd591;
+  --orange-3: #ffa940;
+  --orange-4: #fa8c16;
+  --orange-5: #ad4e00;
+  --yellow-1: #feffe6;
+  --yellow-2: #fffb8f;
+  --yellow-3: #ffec3d;
+  --yellow-4: #fadb14;
+  --yellow-5: #ad8b00;
+  --lime-1: #fcffe6;
+  --lime-2: #eaff8f;
+  --lime-3: #bae637;
+  --lime-4: #a0d911;
+  --lime-5: #5b8c00;
+  --green-1: #f6ffed;
+  --green-2: #b7eb8f;
+  --green-3: #73d13d;
+  --green-4: #52c41a;
+  --green-5: #237804;
+  --cyan-1: #e6fffb;
+  --cyan-2: #87e8de;
+  --cyan-3: #36cfc9;
+  --cyan-4: #13c2c2;
+  --cyan-5: #006d75;
+  --blue-1: #e6f7ff;
+  --blue-2: #91d5ff;
+  --blue-3: #40a9ff;
+  --blue-4: #1890ff;
+  --blue-5: #0050b3;
+  --purple-1: #f9f0ff;
+  --purple-2: #d3adf7;
+  --purple-3: #9254de;
+  --purple-4: #722ed1;
+  --purple-5: #391085;
+  --magenta-1: #fff0f6;
+  --magenta-2: #ffadd2;
+  --magenta-3: #f759ab;
+  --magenta-4: #eb2f96;
+  --magenta-5: #9e1068;
+  --gray-1: #fafafa;
+  --gray-2: #f0f0f0;
+  --gray-3: #d9d9d9;
+  --gray-4: #bfbfbf;
+  --gray-5: #8c8c8c;
+  --gray-6: #595959;
+  --gray-7: #434343;
+  --gray-8: #262626;
+  --gray-9: #1f1f1f;
+  --gray-10: #141414;
+
+  --primary: var(--blue-4);
+  --secondary: var(--gray-8);
+  --danger: var(--red-4);
+  --hover-primary: var(--blue-5);
+  --hover-secondary: var(--gray-10);
+  --hover-danger: var(--red-5);
+
+  --light: var(--gray-1);
+  --dark: var(--gray-8);
+
+  --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 html {
@@ -51,13 +83,13 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-sans-serif);
   margin: 0;
-  background: var(--light);
+  background: var(--gray-2);
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.125rem;
-  color: var(--gray);
+  color: var(--gray-10);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -133,7 +165,7 @@ a {
 }
 
 a:hover {
-  color: var(--blue);
+  color: var(--blue-5);
   text-decoration: underline;
 }
 
@@ -369,11 +401,11 @@ a:hover {
   width: 100%;
   cursor: pointer;
   background: #ffffff;
-  border-top: 1px solid var(--gray10);
+  border-top: 1px solid var(--gray-4);
 }
 
 .accordion:hover {
-  background: var(--gray10);
+  background: var(--gray-4);
 }
 
 .accordion-title {
@@ -418,7 +450,7 @@ a:hover {
   height: auto;
   min-height: 3rem;
   min-width: 18rem;
-  color: var(--gray);
+  color: var(--gray-10);
   margin-top: 16px;
   margin-bottom: 16px;
 }
@@ -452,23 +484,23 @@ a:hover {
 }
 
 .alert-info {
-  border-left: 3px solid var(--blue);
-  background: var(--blue20);
+  border-left: 3px solid var(--blue-4);
+  background: var(--blue-1);
 }
 
 .alert-error {
-  border-left: 3px solid var(--red);
-  background: var(--red20);
+  border-left: 3px solid var(--red-4);
+  background: var(--red-1);
 }
 
 .alert-warn {
-  border-left: 3px solid var(--yellow);
-  background: var(--yellow20);
+  border-left: 3px solid var(--yellow-4);
+  background: var(--yellow-1);
 }
 
 .alert-success {
-  border-left: 3px solid var(--green);
-  background: var(--green20);
+  border-left: 3px solid var(--green-4);
+  background: var(--green-1);
 }
 
 .alert-details {
@@ -509,7 +541,7 @@ a:hover {
 .breadcrumb-item + .breadcrumb-item::before {
   display: inline-block;
   padding-right: 0.5rem;
-  color: #282828;
+  color: var(--gray-8);
   content: "/";
 }
 
@@ -542,7 +574,7 @@ a:hover {
   font-family: "Roboto", sans-serif;
   position: relative;
   display: inline-block;
-  padding: 10px 40px 10px 20px;
+  padding: 10px 35px 10px 20px;
   font-size: 14px;
   font-weight: 500;
   line-height: 14px;
@@ -550,8 +582,8 @@ a:hover {
   max-height: 48px;
   cursor: pointer;
   border: 3px solid transparent;
-  color: var(--gray);
-  background-color: var(--white);
+  color: var(--gray-10);
+  background-color: #ffffff;
   appearance: none;
   overflow: hidden;
   -webkit-appearance: none;
@@ -576,7 +608,7 @@ a:hover {
 
 .btn-primary {
   background-color: var(--primary);
-  color: var(--white);
+  color: #ffffff;
 }
 
 .btn-primary:active {
@@ -601,7 +633,7 @@ a:hover {
 }
 
 .btn-danger {
-  background-color: var(--red);
+  background-color: var(--danger);
   color: #ffffff;
 }
 
@@ -615,7 +647,7 @@ a:hover {
 
 .btn-ghost {
   background-color: Transparent;
-  color: var(--blue);
+  color: var(--primary);
 }
 
 .btn-ghost:active {
@@ -650,7 +682,7 @@ a:hover {
 
 .card-icon {
   font-size: 60px;
-  color: #282828;
+  color: var(--dark);
 }
 
 .card-img {
@@ -662,7 +694,7 @@ a:hover {
 .card-header {
   font-weight: 700;
   min-height: 1.75rem;
-  color: #282828;
+  color: var(--dark);
   overflow: hidden;
   overflow-wrap: break-word;
   text-overflow: ellipsis;
@@ -679,7 +711,7 @@ a:hover {
   font-size: 14px;
   font-weight: 400;
   padding: 12px;
-  color: var(--gray80);
+  color: var(--gray-10);
   min-height: 3.75rem;
 }
 
@@ -719,7 +751,7 @@ a:hover {
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: white;
+  color: #ffffff;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -733,7 +765,7 @@ a:hover {
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-  color: white;
+  color: #ffffff;
 }
 
 .carousel-text {
@@ -743,13 +775,13 @@ a:hover {
   left: 15%;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
 }
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   font-size: 48px;
-  color: #fff;
+  color: #ffffff;
 }
 
 .carousel-indicators {
@@ -772,7 +804,7 @@ a:hover {
   height: 10px;
   width: 10px;
   margin: 0 2px;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
@@ -822,7 +854,7 @@ a:hover {
   height: 16px;
   width: 16px;
   background-color: #ffffff;
-  border: 1px solid #161616;
+  border: 1px solid #141414;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -851,7 +883,7 @@ a:hover {
 }
 /* Checkbox */
 
-/* Menu */
+/* Dropdown */
 .dropdown {
   position: relative;
 }
@@ -859,7 +891,7 @@ a:hover {
 .dropdown-toggle {
   color: var(--gray80);
   border: 0;
-  border-bottom: solid 1px #a8a8a8;
+  border-bottom: solid 1px #bfbfbf;
   padding-right: 10px;
   min-height: 40px;
   max-height: 40px;
@@ -867,11 +899,11 @@ a:hover {
 
 .dropdown-toggle:focus {
   outline: none;
-  border: solid 2px var(--blue);
+  border: solid 2px var(--primary);
 }
 
 .dropdown-toggle::after {
-  border: solid var(--gray80);
+  border: solid var(--gray-10);
   border-width: 0 1px 1px 0;
   content: "";
   display: inline-block;
@@ -892,7 +924,7 @@ a:hover {
   min-width: 10rem;
   margin: 0.125rem 0 0;
   font-size: 14px;
-  color: var(--gray80);
+  color: var(--gray-10);
   text-align: left;
   list-style: none;
   background-color: #ffffff;
@@ -911,7 +943,7 @@ a:hover {
   clear: both;
   line-height: 20px;
   font-weight: 400;
-  color: #212529;
+  color: var(--gray-10);
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
@@ -920,10 +952,10 @@ a:hover {
 
 .dropdown-item:hover {
   text-decoration: none;
-  color: #212529;
-  background-color: #e5e5e5;
+  color: var(--dark);
+  background-color: var(--light);
 }
-/* Menu */
+/* Dropdown */
 
 /* File Uploader */
 .file-wrapper {
@@ -996,7 +1028,7 @@ a:hover {
 }
 
 .form-label {
-  color: var(--gray80);
+  color: var(--gray-8);
   font-weight: 500;
   font-size: 12px;
   margin: 0 0 0.5rem;
@@ -1007,9 +1039,9 @@ a:hover {
   font-size: 14px;
   padding: 8px 18px;
   line-height: 14px;
-  color: #282828;
+  color: var(--gray-10);
   border: 0;
-  border-bottom: solid 1px #a8a8a8;
+  border-bottom: solid 1px #bfbfbf;
   min-height: 40px;
   max-height: 40px;
   background-color: #ffffff;
@@ -1021,7 +1053,7 @@ a:hover {
   font-size: 14px;
   padding: 12px 18px;
   line-height: 17px;
-  color: #282828;
+  color: var(--gray-10);
   background-color: #ffffff;
   width: 100%;
   min-width: 10rem;
@@ -1030,7 +1062,7 @@ a:hover {
   order: 3;
   resize: vertical;
   border: 0;
-  border-bottom: solid 1px #a8a8a8;
+  border-bottom: solid 1px #bfbfbf;
   -webkit-appearance: none;
 }
 
@@ -1044,14 +1076,14 @@ a:hover {
   min-width: 10rem;
   min-height: 40px;
   border: 0;
-  border-bottom: solid 1px #a8a8a8;
+  border-bottom: solid 1px #bfbfbf;
 }
 
 .text-input:focus,
 .select-input:focus,
 .text-area:focus {
   outline: none;
-  border: solid 2px var(--blue);
+  border: solid 2px var(--primary);
 }
 /* Form */
 
@@ -1069,8 +1101,8 @@ a:hover {
   padding: 16px 16px 24px 16px;
   margin-bottom: 0;
   background-color: #ffffff;
-  border-top: 1px solid #cacaca;
-  border-bottom: 1px solid #cacaca;
+  border-top: 1px solid #bfbfbf;
+  border-bottom: 1px solid #bfbfbf;
   cursor: pointer;
   transition: 0.3s;
 }
