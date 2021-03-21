@@ -283,11 +283,23 @@ function fileInit() {
     element.addEventListener("change", function () {
       fileSelectedContainer.innerHTML = "";
       for (let i = 0; i < this.files.length; i++) {
+        const divEl = document.createElement("div");
+        divEl.className = "file-selected-wrapper";
+
         const spanEl = document.createElement("span");
         spanEl.className = "file-selected-file";
-
         spanEl.textContent = this.files[i].name;
-        fileSelectedContainer.appendChild(spanEl);
+
+        const iconEl = document.createElement("span");
+        iconEl.className = "material-icons";
+        iconEl.classList.add("file-selected-icon");
+        iconEl.textContent = 'attach_file';
+
+        divEl.appendChild(iconEl);
+        divEl.appendChild(spanEl);
+
+
+        fileSelectedContainer.appendChild(divEl);
       }
     });
   });
