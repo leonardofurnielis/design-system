@@ -19,6 +19,9 @@ window.onload = function () {
   document.addEventListener("click", carouselIndicatorsListener);
 
   carouselInit(1);
+
+  // File Uploader
+  fileInit();
 };
 
 // Navbar
@@ -266,4 +269,26 @@ function carouselInterval(element) {
     };
     carouselNextPrevListener(event);
   }, interval);
+}
+
+// File Uploader
+function fileInit() {
+  const fileHiddenList = document.querySelectorAll(".file-visibility-hidden");
+
+  fileHiddenList.forEach((element) => {
+    const fileWrapper = element.parentElement;
+    const fileSelectedContainer = fileWrapper.getElementsByClassName(
+      "file-container"
+    )[0];
+    element.addEventListener("change", function () {
+      fileSelectedContainer.innerHTML = "";
+      for (let i = 0; i < this.files.length; i++) {
+        const spanEl = document.createElement("span");
+        spanEl.className = "file-selected-file";
+
+        spanEl.textContent = this.files[i].name;
+        fileSelectedContainer.appendChild(spanEl);
+      }
+    });
+  });
 }
