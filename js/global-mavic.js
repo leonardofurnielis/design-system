@@ -18,6 +18,9 @@ window.onload = function () {
   document.addEventListener("click", carouselNextPrevListener);
   document.addEventListener("click", carouselIndicatorsListener);
 
+  // Toast & Notification & Tag Close
+  document.addEventListener("click", toastNotificationCloseListener);
+
   carouselInit(1);
 
   // File Uploader
@@ -83,7 +86,7 @@ function accordionToggleListener(event) {
   const element = event.target;
   if (
     element.parentElement &&
-    element.parentElement.classList.contains("accordion")
+    element.parentElement.classList.contains("accordion-item")
   ) {
     const accordion = element.parentElement.getElementsByClassName(
       "accordion-content"
@@ -293,14 +296,26 @@ function fileInit() {
         const iconEl = document.createElement("span");
         iconEl.className = "material-icons";
         iconEl.classList.add("file-selected-icon");
-        iconEl.textContent = 'attach_file';
+        iconEl.textContent = "attach_file";
 
         divEl.appendChild(iconEl);
         divEl.appendChild(spanEl);
-
 
         fileSelectedContainer.appendChild(divEl);
       }
     });
   });
+}
+
+// Toast & Notification & Tag Close
+function toastNotificationCloseListener(event) {
+  const element = event.target;
+
+  if (
+    element.classList.contains("notification-close-button") ||
+    element.classList.contains("toast-close-button") ||
+    element.classList.contains("tag-close")
+  ) {
+    element.parentElement.style.display = "none";
+  }
 }
