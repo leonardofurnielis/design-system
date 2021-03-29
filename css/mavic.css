@@ -182,7 +182,7 @@ a:hover {
 }
 
 .container,
-.container-md,
+.container-medium,
 .container-fluid {
   width: 100%;
   margin-right: auto;
@@ -202,28 +202,28 @@ a:hover {
   flex-wrap: wrap;
 }
 
-.col-sm {
+.col-small {
   max-width: 540px;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 8px;
+  padding-left: 8px;
 }
 
-.col-md {
+.col-medium {
   max-width: 720px;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 8px;
+  padding-left: 8px;
 }
 
-.col-lg {
+.col-large {
   max-width: 960px;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 8px;
+  padding-left: 8px;
 }
 
 .col {
   flex: 1 0 0%;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 8px;
+  padding-left: 8px;
   flex-basis: 0;
   flex-grow: 1;
   max-width: 100%;
@@ -243,8 +243,8 @@ a:hover {
 .col-12 {
   position: relative;
   width: 100%;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 8px;
+  padding-left: 8px;
   flex: 0 0 100%;
   max-width: 100%;
 }
@@ -262,7 +262,7 @@ a:hover {
     padding-left: 2.25rem;
   }
 
-  .container-md {
+  .container-medium {
     padding-right: 1.5rem;
     padding-left: 1.5rem;
   }
@@ -294,7 +294,7 @@ a:hover {
     padding-left: 4.5rem;
   }
 
-  .container-md {
+  .container-medium {
     padding-right: 2.25rem;
     padding-left: 2.25rem;
   }
@@ -336,7 +336,7 @@ a:hover {
     padding-left: 9rem;
   }
 
-  .container-md {
+  .container-medium {
     padding-right: 4.5rem;
     padding-left: 4.5rem;
   }
@@ -388,7 +388,7 @@ a:hover {
     padding-left: 14rem;
   }
 
-  .container-md {
+  .container-medium {
     padding-right: 9rem;
     padding-left: 9rem;
   }
@@ -868,12 +868,12 @@ a:hover {
   color: var(--blue-5);
 }
 
-.btn-md {
+.btn-field {
   min-height: 40px;
   max-height: 40px;
 }
 
-.btn-sm {
+.btn-small {
   min-height: 32px;
   max-height: 32px;
   line-height: 5px;
@@ -946,6 +946,11 @@ a:hover {
   backface-visibility: hidden;
   transition: transform 0.6s ease-in-out;
 }
+
+.carousel-item:first-child {
+  display: block;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .carousel-item {
     transition: none;
@@ -1564,19 +1569,19 @@ a:hover {
   border-radius: 50%;
 }
 
-/* Create the indicator (the carousel-indicators-item/circle - hidden when not checked) */
+/* Create the indicator */
 .radio-checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the indicator (carousel-indicators-item/circle) when checked */
+/* Show the indicator */
 .radio input:checked ~ .radio-checkmark:after {
   display: block;
 }
 
-/* Style the indicator (carousel-indicators-item/circle) */
+/* Style the indicator */
 .radio .radio-checkmark:after {
   top: 4px;
   left: 4px;
