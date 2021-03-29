@@ -1,5 +1,10 @@
 window.onload = function () {
   ("use strict");
+
+  onInit();
+};
+
+function onInit() {
   // Navbar
   document.addEventListener("click", navbarToggleListener);
   document.addEventListener("click", navbarHideListener);
@@ -21,11 +26,13 @@ window.onload = function () {
   // Toast & Notification & Tag Close
   document.addEventListener("click", toastNotificationCloseListener);
 
-  carouselInit(1);
+  carouselInit(1, undefined);
 
   // File Uploader
   fileInit();
-};
+}
+
+//.addEventListener
 
 // Navbar
 function navbarToggleListener(event) {
@@ -190,16 +197,25 @@ function tabHandlerListener(event) {
 
 // Carousel
 const CAROUSEL_INDEX = {};
-let CAROUSEL_INTERVAL;
-function carouselInit(n) {
-  let i;
+let CAROUSEL_INTERVAL = {};
 
-  const carousel = document.getElementsByClassName("carousel");
+const observer = new MutationObserver(callback);
+observer.observe(document.body, { childList: true, subtree: true });
+
+function callback(mutationList, observer) {
+  carouselInit(1, undefined);
+}
+
+function carouselInit(n, element) {
+  let i;
+  const carousel = element || document.getElementsByClassName("carousel");
+
   for (let c = 0; c < carousel.length; c++) {
     if (!CAROUSEL_INDEX[carousel[c].id]) {
       CAROUSEL_INDEX[carousel[c].id] = 1;
     }
-    clearTimeout(CAROUSEL_INTERVAL);
+
+    clearTimeout(CAROUSEL_INTERVAL[carousel[c].id]);
     carouselInterval(carousel[c]);
     const slides = carousel[c].getElementsByClassName("carousel-item");
     const indicators = carousel[c].getElementsByClassName(
@@ -218,11 +234,16 @@ function carouselInit(n) {
       slides[i].style.display = "none";
     }
 
-    for (i = 0; i < indicators.length; i++) {
-      indicators[i].className = indicators[i].className.replace(" active", "");
+    if (indicators && indicators.length > 0) {
+      for (i = 0; i < indicators.length; i++) {
+        indicators[i].className = indicators[i].className.replace(
+          " active",
+          ""
+        );
+      }
+      indicators[CAROUSEL_INDEX[carousel[c].id] - 1].className += " active";
     }
 
-    indicators[CAROUSEL_INDEX[carousel[c].id] - 1].className += " active";
     slides[CAROUSEL_INDEX[carousel[c].id] - 1].style.display = "block";
   }
 }
@@ -239,9 +260,9 @@ function carouselNextPrevListener(event) {
     const carousel = element.parentElement.parentElement;
 
     if (element.classList.contains("carousel-control-next-icon")) {
-      carouselInit((CAROUSEL_INDEX[carousel.id] += 1));
+      carouselInit((CAROUSEL_INDEX[carousel.id] += 1), [carousel]);
     } else {
-      carouselInit((CAROUSEL_INDEX[carousel.id] += -1));
+      carouselInit((CAROUSEL_INDEX[carousel.id] += -1), [carousel]);
     }
   }
 }
@@ -264,14 +285,17 @@ function carouselIndicatorsListener(event) {
 
 function carouselInterval(element) {
   const interval = element.attributes["data-interval"]
-    ? element.attributes["data-interval"]
+    ? element.attributes["data-interval"].value
     : 5000;
-  CAROUSEL_INTERVAL = setTimeout(() => {
-    const event = {
-      target: element.getElementsByClassName("carousel-control-next-icon")[0],
-    };
-    carouselNextPrevListener(event);
-  }, interval);
+
+  if (interval !== "none") {
+    CAROUSEL_INTERVAL[element.id] = setTimeout(() => {
+      const event = {
+        target: element.getElementsByClassName("carousel-control-next-icon")[0],
+      };
+      carouselNextPrevListener(event);
+    }, interval);
+  }
 }
 
 // File Uploader
