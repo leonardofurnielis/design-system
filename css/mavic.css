@@ -1,5 +1,89 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
+@font-face {
+  font-family: "Charlie Text";
+  src: url("../fonts/Charlie_Text-Bold_Italic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Charlie Text";
+  src: url("../fonts/Charlie_Text-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Charlie Text";
+  src: url("../fonts/Charlie_Text-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Charlie Text";
+  src: url("../fonts/Charlie_Text-Light_Italic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Charlie Text";
+  src: url("../fonts/Charlie_Text-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Charlie Text";
+  src: url("../fonts/Charlie_Text-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Charlie Text";
+  src: url("../fonts/Charlie_Text-Semibold_Italic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Charlie Display";
+  src: url("../fonts/Charlie_Display-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Charlie Display";
+  src: url("../fonts/Charlie_Display-Bold_Italic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Charlie Display";
+  src: url("../fonts/Charlie_Display-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Charlie Display";
+  src: url("../fonts/Charlie_Display-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Charlie Display";
+  src: url("../fonts/Charlie_Display-Semibold_Italic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+}
+
 :root {
   --black: #000000;
   --white: #ffffff;
@@ -79,9 +163,8 @@
   --light: #fafafa;
   --dark: #262626;
 
-  --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-charlie-text: "Charlie Text", sans-serif;
+  --font-charlie-display: "Charlie Display", sans-serif;
 }
 
 html {
@@ -95,7 +178,7 @@ html {
 }
 
 body {
-  font-family: var(--font-sans-serif);
+  font-family: var(--font-charlie-text);
   margin: 0;
   background: var(--gray-1);
   font-size: 0.875rem;
@@ -570,14 +653,20 @@ a:hover {
   margin-right: auto !important;
 }
 
-/* Material Icons */
+/**
+  * ------------------------------------------------------------------------
+  * Material Icons
+  * ------------------------------------------------------------------------
+  */
 .material-icons.large {
   font-size: 32px;
 }
-/* Material Icons */
 
-/* Accordion */
-
+/**
+  * ------------------------------------------------------------------------
+  * Accordion
+  * ------------------------------------------------------------------------
+  */
 .accordion {
   width: 100%;
 }
@@ -625,9 +714,12 @@ a:hover {
 .accordion-content.show {
   display: block;
 }
-/* Accordion */
 
-/* Notification */
+/**
+  * ------------------------------------------------------------------------
+  * Notification
+  * ------------------------------------------------------------------------
+  */
 .notification {
   font-size: 14rem;
   font-weight: 400;
@@ -731,9 +823,12 @@ a:hover {
   transition: outline 0.11s cubic-bezier(0.2, 0, 0.38, 0.9),
     background-color 0.11s cubic-bezier(0.2, 0, 0.38, 0.9);
 }
-/* Notification */
 
-/* Breadcrumb */
+/**
+  * ------------------------------------------------------------------------
+  * Breadcrumb
+  * ------------------------------------------------------------------------
+  */
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
@@ -776,11 +871,14 @@ a:hover {
 .breadcrumb-item.active a:hover {
   text-decoration: none;
 }
-/* Breadcrumb */
 
-/* Button */
+/**
+  * ------------------------------------------------------------------------
+  * Button
+  * ------------------------------------------------------------------------
+  */
 .btn {
-  font-family: var(--font-sans-serif);
+  font-family: var(--font-charlie-text);
   position: relative;
   display: inline-block;
   padding: 10px 35px 10px 20px;
@@ -878,9 +976,12 @@ a:hover {
   max-height: 32px;
   line-height: 5px;
 }
-/* Button */
 
-/* Card */
+/**
+  * ------------------------------------------------------------------------
+  * Card
+  * ------------------------------------------------------------------------
+  */
 .card {
   width: 100%;
   flex-grow: 1;
@@ -930,9 +1031,12 @@ a:hover {
   min-height: 40px;
   width: 100%;
 }
-/* Card */
 
-/* Carousel */
+/**
+  * ------------------------------------------------------------------------
+  * Carousel
+  * ------------------------------------------------------------------------
+  */
 .carousel {
   width: 100%;
   max-width: 1000px;
@@ -1029,9 +1133,12 @@ a:hover {
 .carousel-indicators-item:hover {
   opacity: 1;
 }
-/* Carousel */
 
-/* Checkbox */
+/**
+  * ------------------------------------------------------------------------
+  * Checkbox
+  * ------------------------------------------------------------------------
+  */
 .checkbox label {
   font-size: 14px;
   font-weight: 700;
@@ -1095,9 +1202,12 @@ a:hover {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* Checkbox */
 
-/* Dropdown */
+/**
+  * ------------------------------------------------------------------------
+  * Dropdown
+  * ------------------------------------------------------------------------
+  */
 .dropdown {
   position: relative;
 }
@@ -1169,9 +1279,12 @@ a:hover {
   color: var(--dark);
   background-color: var(--gray-2);
 }
-/* Dropdown */
 
-/* File Uploader */
+/**
+  * ------------------------------------------------------------------------
+  * File Uploader
+  * ------------------------------------------------------------------------
+  */
 .file-wrapper {
   display: flex;
   flex: 1 1 auto;
@@ -1220,9 +1333,12 @@ a:hover {
 .file-visibility-hidden {
   visibility: hidden;
 }
-/* File Uploader */
 
-/* Form */
+/**
+  * ------------------------------------------------------------------------
+  * Form
+  * ------------------------------------------------------------------------
+  */
 .form-control-plaintext {
   display: block;
   width: 100%;
@@ -1249,7 +1365,7 @@ a:hover {
 }
 
 .text-input {
-  font-family: var(--font-sans-serif);
+  font-family: var(--font-charlie-text);
   font-size: 14px;
   padding: 8px 18px;
   line-height: 14px;
@@ -1263,7 +1379,7 @@ a:hover {
 }
 
 .text-area {
-  font-family: var(--font-sans-serif);
+  font-family: var(--font-charlie-text);
   font-size: 14px;
   padding: 12px 18px;
   line-height: 17px;
@@ -1281,7 +1397,7 @@ a:hover {
 }
 
 .select-input {
-  font-family: var(--font-sans-serif);
+  font-family: var(--font-charlie-text);
   font-size: 14px;
   padding: 8px 18px;
   line-height: 14px;
@@ -1299,9 +1415,12 @@ a:hover {
   outline: none;
   border: solid 2px var(--primary);
 }
-/* Form */
 
-/* List */
+/**
+  * ------------------------------------------------------------------------
+  * List
+  * ------------------------------------------------------------------------
+  */
 .list-group {
   display: flex;
   flex-direction: column;
@@ -1333,9 +1452,12 @@ a:hover {
   background-color: #e5e5e5;
   cursor: unset;
 }
-/* List */
 
-/* Loading */
+/**
+  * ------------------------------------------------------------------------
+  * Loading
+  * ------------------------------------------------------------------------
+  */
 .loading {
   color: var(--primary);
   display: inline-block;
@@ -1360,9 +1482,12 @@ a:hover {
     transform: rotate(360deg);
   }
 }
-/* Loading */
 
-/* Navbar */
+/**
+  * ------------------------------------------------------------------------
+  * Navbar
+  * ------------------------------------------------------------------------
+  */
 .navbar {
   margin: 0;
   overflow: hidden;
@@ -1372,7 +1497,8 @@ a:hover {
 }
 
 .navbar-brand-name {
-  font-weight: 800;
+  font-family: var(--font-charlie-display);
+  font-weight: bold;
   color: var(--light);
   margin-left: 16px;
 }
@@ -1533,9 +1659,12 @@ a:hover {
     order: 3;
   }
 }
-/* Navbar */
 
-/* Radio */
+/**
+  * ------------------------------------------------------------------------
+  * Radio
+  * ------------------------------------------------------------------------
+  */
 .radio {
   display: block;
   position: relative;
@@ -1590,9 +1719,12 @@ a:hover {
   border-radius: 50%;
   background: var(--primary);
 }
-/* Radio */
 
-/* Sidebar */
+/**
+  * ------------------------------------------------------------------------
+  * Sidebar
+  * ------------------------------------------------------------------------
+  */
 .container-sidebar {
   width: calc(100% - 256px);
 }
@@ -1710,9 +1842,12 @@ a:hover {
     display: block;
   }
 }
-/* Sidebar */
 
-/* Tab */
+/**
+  * ------------------------------------------------------------------------
+  * Tab
+  * ------------------------------------------------------------------------
+  */
 .tab {
   padding: 0;
   margin: 0px 0px 0px 10px;
@@ -1725,7 +1860,7 @@ a:hover {
 /* Style the buttons inside the tab */
 .tab-link {
   transition: 0.2s;
-  font-family: var(--font-sans-serif);
+  font-family: var(--font-charlie-text);
   background-color: inherit;
   float: left;
   border: none;
@@ -1760,9 +1895,12 @@ a:hover {
 .tab-pane.show {
   display: block;
 }
-/* Tab */
 
-/* Tag */
+/**
+  * ------------------------------------------------------------------------
+  * Tag
+  * ------------------------------------------------------------------------
+  */
 .tag {
   display: inline-block;
   font-size: 13px;
@@ -1802,9 +1940,12 @@ a:hover {
   margin-left: 4px;
   cursor: pointer;
 }
-/* Tag */
 
-/* Toast */
+/**
+  * ------------------------------------------------------------------------
+  * Toast
+  * ------------------------------------------------------------------------
+  */
 .toast {
   position: relative;
   font-size: 12rem;
@@ -1895,4 +2036,3 @@ a:hover {
   transition: outline 0.11s cubic-bezier(0.2, 0, 0.38, 0.9),
     background-color 0.11s cubic-bezier(0.2, 0, 0.38, 0.9);
 }
-/* Toast */
