@@ -1,40 +1,57 @@
 window.onload = function () {
   ("use strict");
 
-  onInit();
-};
-
-function onInit() {
-  // Navbar
+  /**
+   * ------------------------------------------------------------------------
+   * Event Listeners
+   * ------------------------------------------------------------------------
+   */
   document.addEventListener("click", navbarToggleListener);
   document.addEventListener("click", navbarHideListener);
-  // Sidenav
+
   document.addEventListener("click", sidenavToggleListener);
-  // Accordion
+
   document.addEventListener("click", accordionToggleListener);
-  // Dropdown
+
   document.addEventListener("click", dropdownToggleListener);
   document.addEventListener("click", dropdownHideListener);
-  // List
+
   document.addEventListener("click", listSelectionListener);
-  // Tab
+
   document.addEventListener("click", tabHandlerListener);
-  // Carousel
+
   document.addEventListener("click", carouselNextPrevListener);
   document.addEventListener("click", carouselIndicatorsListener);
 
-  // Toast & Notification & Tag Close
   document.addEventListener("click", toastNotificationCloseListener);
 
-  carouselInit(1, undefined);
+  /**
+   * ------------------------------------------------------------------------
+   * Initializers
+   * ------------------------------------------------------------------------
+   */
+  Carousel(1, undefined);
+  File();
 
-  // File Uploader
-  fileInit();
-}
+  /**
+   * ------------------------------------------------------------------------
+   * Observer
+   * ------------------------------------------------------------------------
+   */
+  const observer = new MutationObserver(Observer);
+  observer.observe(document.body, { childList: true, subtree: true });
 
-//.addEventListener
+  function Observer() {
+    Carousel(1, undefined);
+    File();
+  }
+};
 
-// Navbar
+/**
+ * ------------------------------------------------------------------------
+ * Navbar
+ * ------------------------------------------------------------------------
+ */
 function navbarToggleListener(event) {
   const element = event.target;
   if (
@@ -69,7 +86,11 @@ function navbarHideListener(event) {
   }
 }
 
-// Sidenav
+/**
+ * ------------------------------------------------------------------------
+ * Sidenav
+ * ------------------------------------------------------------------------
+ */
 function sidenavToggleListener(event) {
   const element = event.target;
 
@@ -88,7 +109,11 @@ function sidenavToggleListener(event) {
   }
 }
 
-// Accordion
+/**
+ * ------------------------------------------------------------------------
+ * Accordion
+ * ------------------------------------------------------------------------
+ */
 function accordionToggleListener(event) {
   const element = event.target;
   if (
@@ -111,7 +136,12 @@ function accordionToggleListener(event) {
     accordion.classList.toggle("show");
   }
 }
-// Dropdown
+
+/**
+ * ------------------------------------------------------------------------
+ * Dropdown
+ * ------------------------------------------------------------------------
+ */
 function dropdownToggleListener(event) {
   const element = event.target;
 
@@ -146,7 +176,11 @@ function dropdownHideListener(event) {
   }
 }
 
-// List
+/**
+ * ------------------------------------------------------------------------
+ * List
+ * ------------------------------------------------------------------------
+ */
 function listSelectionListener(event) {
   const element = event.target;
   if (
@@ -165,7 +199,11 @@ function listSelectionListener(event) {
   }
 }
 
-// Tab
+/**
+ * ------------------------------------------------------------------------
+ * Tab
+ * ------------------------------------------------------------------------
+ */
 function tabHandlerListener(event) {
   const element = event.target;
   if (
@@ -195,19 +233,17 @@ function tabHandlerListener(event) {
   }
 }
 
-// Carousel
+/**
+ * ------------------------------------------------------------------------
+ * Carousel
+ * ------------------------------------------------------------------------
+ */
 const CAROUSEL_INDEX = {};
 let CAROUSEL_INTERVAL = {};
 
-const observer = new MutationObserver(callback);
-observer.observe(document.body, { childList: true, subtree: true });
-
-function callback(mutationList, observer) {
-  carouselInit(1, undefined);
-}
-
-function carouselInit(n, element) {
+function Carousel(n, element) {
   let i;
+
   const carousel = element || document.getElementsByClassName("carousel");
 
   for (let c = 0; c < carousel.length; c++) {
@@ -247,7 +283,7 @@ function carouselInit(n, element) {
     slides[CAROUSEL_INDEX[carousel[c].id] - 1].style.display = "block";
   }
 }
-// Carousel control next/previous controls
+
 function carouselNextPrevListener(event) {
   const element = event.target;
   if (
@@ -260,13 +296,13 @@ function carouselNextPrevListener(event) {
     const carousel = element.parentElement.parentElement;
 
     if (element.classList.contains("carousel-control-next-icon")) {
-      carouselInit((CAROUSEL_INDEX[carousel.id] += 1), [carousel]);
+      Carousel((CAROUSEL_INDEX[carousel.id] += 1), [carousel]);
     } else {
-      carouselInit((CAROUSEL_INDEX[carousel.id] += -1), [carousel]);
+      Carousel((CAROUSEL_INDEX[carousel.id] += -1), [carousel]);
     }
   }
 }
-// Carousel thumbnail controls
+
 function carouselIndicatorsListener(event) {
   const element = event.target;
   if (
@@ -275,7 +311,7 @@ function carouselIndicatorsListener(event) {
   ) {
     const carousel = element.parentElement.parentElement;
 
-    carouselInit(
+    Carousel(
       (CAROUSEL_INDEX[carousel.id] = Number(
         element.attributes["data-slide-to"].value
       ))
@@ -298,8 +334,12 @@ function carouselInterval(element) {
   }
 }
 
-// File Uploader
-function fileInit() {
+/**
+ * ------------------------------------------------------------------------
+ * File Uploader
+ * ------------------------------------------------------------------------
+ */
+function File() {
   const fileHiddenList = document.querySelectorAll(".file-visibility-hidden");
 
   fileHiddenList.forEach((element) => {
@@ -331,7 +371,11 @@ function fileInit() {
   });
 }
 
-// Toast & Notification & Tag Close
+/**
+ * ------------------------------------------------------------------------
+ * Toast & Notification & Tag Close
+ * ------------------------------------------------------------------------
+ */
 function toastNotificationCloseListener(event) {
   const element = event.target;
 
