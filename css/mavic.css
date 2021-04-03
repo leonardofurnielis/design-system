@@ -1604,7 +1604,7 @@ a:hover {
   }
 
   body.show {
-    overflow: hidden;
+    overflow: auto;
   }
 
   .navbar-list {
