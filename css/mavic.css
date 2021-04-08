@@ -151,8 +151,8 @@
   --gray-9: #262626;
   --gray-10: #161616;
 
-  --primary: var(--blue-4);
-  --hover-primary: var(--blue-5);
+  --primary: var(--cyan-5);
+  --hover-primary: var(--cyan-4);
 
   --secondary: var(--gray-8);
   --hover-secondary: var(--gray-10);
@@ -265,15 +265,14 @@ a:hover {
 }
 
 .container,
-.container-medium,
 .container-fluid {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
   margin-top: 16px;
   margin-bottom: 16px;
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .d-flex {
@@ -285,31 +284,11 @@ a:hover {
   flex-wrap: wrap;
 }
 
-.col-small {
-  max-width: 540px;
-  padding-right: 8px;
-  padding-left: 8px;
-}
-
-.col-medium {
-  max-width: 720px;
-  padding-right: 8px;
-  padding-left: 8px;
-}
-
-.col-large {
-  max-width: 960px;
-  padding-right: 8px;
-  padding-left: 8px;
-}
-
 .col {
+  position: relative;
   flex: 1 0 0%;
   padding-right: 8px;
   padding-left: 8px;
-  flex-basis: 0;
-  flex-grow: 1;
-  max-width: 100%;
 }
 
 .col-1,
@@ -332,22 +311,16 @@ a:hover {
   max-width: 100%;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 320px) {
   .col-1 {
     flex: 0 0 50%;
     max-width: 50%;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   .container {
-    padding-right: 2.25rem;
-    padding-left: 2.25rem;
-  }
-
-  .container-medium {
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
+    max-width: 720px;
   }
 
   .col-1 {
@@ -371,15 +344,9 @@ a:hover {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .container {
-    padding-right: 4.5rem;
-    padding-left: 4.5rem;
-  }
-
-  .container-medium {
-    padding-right: 2.25rem;
-    padding-left: 2.25rem;
+    max-width: 720px;
   }
 
   .col-1 {
@@ -413,15 +380,9 @@ a:hover {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .container {
-    padding-right: 9rem;
-    padding-left: 9rem;
-  }
-
-  .container-medium {
-    padding-right: 4.5rem;
-    padding-left: 4.5rem;
+    max-width: 960px;
   }
 
   .col-1 {
@@ -465,15 +426,65 @@ a:hover {
   }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1200px) {
   .container {
-    padding-right: 14rem;
-    padding-left: 14rem;
+    max-width: 1140px;
   }
 
-  .container-medium {
-    padding-right: 9rem;
-    padding-left: 9rem;
+  .col-1 {
+    flex: 0 0 10%;
+    max-width: 10%;
+  }
+
+  .col-2 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+
+  .col-3 {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+
+  .col-4 {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
+  .col-5 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .col-6 {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+
+  .col-7 {
+    flex: 0 0 70%;
+    max-width: 70%;
+  }
+
+  .col-8 {
+    flex: 0 0 80%;
+    max-width: 80%;
+  }
+
+  .col-9 {
+    flex: 0 0 90%;
+    max-width: 90%;
+  }
+
+  .col-10 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1360px;
   }
 
   .col-1 {
@@ -880,19 +891,19 @@ a:hover {
 .btn {
   font-family: var(--font-charlie-text);
   position: relative;
-  display: inline-block;
-  padding: 10px 35px 10px 20px;
+  display: inline-flex;
+  padding: calc(0.875rem - 3px) 63px calc(0.875rem - 3px) 15px;
   font-size: 14px;
   font-weight: 500;
-  line-height: 14px;
+  line-height: 1.29;
+  letter-spacing: 0.16px;
   min-height: 48px;
   max-height: 48px;
+  text-align: left;
   cursor: pointer;
   border: 3px solid transparent;
   color: var(--gray-10);
   background-color: #ffffff;
-  appearance: none;
-  overflow: hidden;
   -webkit-appearance: none;
   -moz-appearance: none;
   user-select: none;
@@ -1518,7 +1529,7 @@ a:hover {
 }
 
 .navbar-list {
-  width: 59%;
+  width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
