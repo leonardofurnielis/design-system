@@ -30,8 +30,8 @@ window.onload = function () {
    * Initializers
    * ------------------------------------------------------------------------
    */
-  Carousel(1, undefined);
-  File();
+  carouselOnInit(1, undefined);
+  fileListener();
 
   /**
    * ------------------------------------------------------------------------
@@ -42,8 +42,8 @@ window.onload = function () {
   observer.observe(document.body, { childList: true, subtree: true });
 
   function Observer() {
-    Carousel(1, undefined);
-    File();
+    carouselOnInit(1, undefined);
+    fileListener();
   }
 };
 
@@ -241,7 +241,7 @@ function tabHandlerListener(event) {
 const CAROUSEL_INDEX = {};
 let CAROUSEL_INTERVAL = {};
 
-function Carousel(n, element) {
+function carouselOnInit(n, element) {
   let i;
 
   const carousel = element || document.getElementsByClassName("carousel");
@@ -296,9 +296,9 @@ function carouselNextPrevListener(event) {
     const carousel = element.parentElement.parentElement;
 
     if (element.classList.contains("carousel-control-next-icon")) {
-      Carousel((CAROUSEL_INDEX[carousel.id] += 1), [carousel]);
+      carouselOnInit((CAROUSEL_INDEX[carousel.id] += 1), [carousel]);
     } else {
-      Carousel((CAROUSEL_INDEX[carousel.id] += -1), [carousel]);
+      carouselOnInit((CAROUSEL_INDEX[carousel.id] += -1), [carousel]);
     }
   }
 }
@@ -311,7 +311,7 @@ function carouselIndicatorsListener(event) {
   ) {
     const carousel = element.parentElement.parentElement;
 
-    Carousel(
+    carouselOnInit(
       (CAROUSEL_INDEX[carousel.id] = Number(
         element.attributes["data-slide-to"].value
       ))
@@ -339,36 +339,68 @@ function carouselInterval(element) {
  * File Uploader
  * ------------------------------------------------------------------------
  */
-function File() {
+
+const FILE_LIST = {};
+function fileListener() {
   const fileHiddenList = document.querySelectorAll(".file-visibility-hidden");
 
   fileHiddenList.forEach((element) => {
     const fileWrapper = element.parentElement;
     const fileSelectedContainer = fileWrapper.getElementsByClassName(
-      "file-container"
+      "file-selected-container"
     )[0];
     element.addEventListener("change", function () {
-      fileSelectedContainer.innerHTML = "";
-      for (let i = 0; i < this.files.length; i++) {
-        const divEl = document.createElement("div");
-        divEl.className = "file-selected-wrapper";
+      for (let t = 0; t < this.files.length; t++) {
+        if (!FILE_LIST[element.id]) {
+          FILE_LIST[element.id] = [];
+        }
 
-        const spanEl = document.createElement("span");
-        spanEl.className = "file-selected-file";
-        spanEl.textContent = this.files[i].name;
+        if (
+          !FILE_LIST[element.id].filter((f) => this.files[t].name === f.name)[0]
+        ) {
+          FILE_LIST[element.id].push(this.files[t]);
 
-        const iconEl = document.createElement("span");
-        iconEl.className = "material-icons";
-        iconEl.classList.add("file-selected-icon");
-        iconEl.textContent = "attach_file";
+          const divEl = document.createElement("div");
+          divEl.className = "file-selected-wrapper";
+          divEl.id = this.files[t].name;
 
-        divEl.appendChild(iconEl);
-        divEl.appendChild(spanEl);
+          const spanEl = document.createElement("span");
+          spanEl.className = "file-selected-file";
+          spanEl.textContent = this.files[t].name;
 
-        fileSelectedContainer.appendChild(divEl);
+          const iconEl = document.createElement("span");
+          iconEl.className = "material-icons";
+          iconEl.classList.add("file-selected-icon");
+          iconEl.textContent = "attach_file";
+
+          const removeEl = document.createElement("span");
+          removeEl.className = "material-icons";
+          removeEl.addEventListener("click", fileRemoveListener);
+          removeEl.classList.add("file-selected-close-icon");
+          removeEl.textContent = "close";
+
+          divEl.appendChild(iconEl);
+          divEl.appendChild(spanEl);
+          divEl.appendChild(removeEl);
+
+          fileSelectedContainer.appendChild(divEl);
+        }
       }
     });
   });
+}
+
+function fileRemoveListener(event) {
+  const element = event.target;
+  const parentElement = element.parentElement;
+  const ariaControl =
+    parentElement.parentElement.attributes["aria-control"].value;
+
+  FILE_LIST[ariaControl] = FILE_LIST[ariaControl].filter(
+    (f) => f.name !== parentElement.id
+  );
+
+  element.parentElement.remove();
 }
 
 /**
