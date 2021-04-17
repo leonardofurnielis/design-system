@@ -127,10 +127,10 @@ function accordionToggleListener(event) {
     const accordionIcon = element.parentElement.getElementsByClassName(
       "accordion-icon"
     )[0];
-    if (accordionIcon.innerHTML.trim() === "keyboard_arrow_down") {
-      accordionIcon.innerHTML = "keyboard_arrow_up";
-    } else {
+    if (accordionIcon.innerHTML.trim() === "keyboard_arrow_right") {
       accordionIcon.innerHTML = "keyboard_arrow_down";
+    } else {
+      accordionIcon.innerHTML = "keyboard_arrow_right";
     }
 
     accordion.classList.toggle("show");
