@@ -23,7 +23,7 @@ window.onload = function () {
   document.addEventListener("click", carouselNextPrevListener);
   document.addEventListener("click", carouselIndicatorsListener);
 
-  document.addEventListener("click", toastNotificationCloseListener);
+  document.addEventListener("click", toastAlertCloseListener);
 
   /**
    * ------------------------------------------------------------------------
@@ -405,14 +405,14 @@ function fileRemoveListener(event) {
 
 /**
  * ------------------------------------------------------------------------
- * Toast & Notification & Tag Close
+ * Toast & Alert & Tag Close
  * ------------------------------------------------------------------------
  */
-function toastNotificationCloseListener(event) {
+function toastAlertCloseListener(event) {
   const element = event.target;
 
   if (
-    element.classList.contains("notification-close-button") ||
+    element.classList.contains("alert-close-button") ||
     element.classList.contains("toast-close-button") ||
     element.classList.contains("tag-close")
   ) {
