@@ -120,11 +120,9 @@ function accordionToggleListener(event) {
     element.parentElement &&
     element.parentElement.classList.contains("accordion-item")
   ) {
-    const accordion = element.parentElement.getElementsByClassName(
-      "accordion-content"
-    )[0];
+    const accordionItem = element.parentElement;
 
-    const accordionIcon = element.parentElement.getElementsByClassName(
+    const accordionIcon = accordionItem.getElementsByClassName(
       "accordion-icon"
     )[0];
     if (accordionIcon.innerHTML.trim() === "keyboard_arrow_right") {
@@ -133,7 +131,7 @@ function accordionToggleListener(event) {
       accordionIcon.innerHTML = "keyboard_arrow_right";
     }
 
-    accordion.classList.toggle("show");
+    accordionItem.classList.toggle("show");
   }
 }
 
@@ -414,7 +412,7 @@ function toastAlertCloseListener(event) {
   if (
     element.classList.contains("alert-close-button") ||
     element.classList.contains("toast-close-button") ||
-    element.classList.contains("tag-close")
+    element.classList.contains("badge-close")
   ) {
     element.parentElement.style.display = "none";
   }
