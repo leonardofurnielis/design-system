@@ -120,18 +120,18 @@ function accordionToggleListener(event) {
     element.parentElement &&
     element.parentElement.classList.contains("accordion-item")
   ) {
-    const accordionItem = element.parentElement;
+    const accordion =
+      element.parentElement.getElementsByClassName("accordion-content")[0];
 
-    const accordionIcon = accordionItem.getElementsByClassName(
-      "accordion-icon"
-    )[0];
+    const accordionIcon =
+      element.parentElement.getElementsByClassName("accordion-icon")[0];
     if (accordionIcon.innerHTML.trim() === "keyboard_arrow_right") {
       accordionIcon.innerHTML = "keyboard_arrow_down";
     } else {
       accordionIcon.innerHTML = "keyboard_arrow_right";
     }
 
-    accordionItem.classList.toggle("show");
+    accordion.classList.toggle("show");
   }
 }
 
@@ -148,9 +148,8 @@ function dropdownToggleListener(event) {
     element.parentElement.classList.contains("dropdown")
   ) {
     const dropdownList = document.querySelectorAll(".dropdown-menu.show");
-    const dropdown = element.parentElement.getElementsByClassName(
-      "dropdown-menu"
-    )[0];
+    const dropdown =
+      element.parentElement.getElementsByClassName("dropdown-menu")[0];
 
     dropdown.classList.toggle("show");
     dropdownList.forEach((menu) => {
@@ -255,6 +254,17 @@ function carouselOnInit(n, element) {
     const indicators = carousel[c].getElementsByClassName(
       "carousel-indicators-item"
     );
+
+    if (slides.length > 1) {
+      const next = carousel[c].getElementsByClassName(
+        "carousel-control-next"
+      )[0];
+      const prev = carousel[c].getElementsByClassName(
+        "carousel-control-prev"
+      )[0];
+      next.classList.add("show");
+      prev.classList.add("show");
+    }
 
     if (n > slides.length) {
       CAROUSEL_INDEX[carousel[c].id] = 1;
@@ -412,7 +422,7 @@ function toastAlertCloseListener(event) {
   if (
     element.classList.contains("alert-close-button") ||
     element.classList.contains("toast-close-button") ||
-    element.classList.contains("badge-close")
+    element.classList.contains("tag-close")
   ) {
     element.parentElement.style.display = "none";
   }
