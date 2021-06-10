@@ -158,8 +158,8 @@
   --gray-900: #151515;
   --gray-1000: #030303;
 
-  --primary: var(--blue-400);
-  --hover-primary: var(--blue-500);
+  --primary: var(--cyan-300);
+  --hover-primary: var(--cyan-400);
 
   --secondary: var(--gray-850);
   --hover-secondary: var(--gray-900);
@@ -705,14 +705,6 @@ a:hover {
   border-top: 1px solid var(--gray-200);
 }
 
-.accordion-item.show {
-  border-left: 3px solid #0066cc;
-}
-
-.accordion-item.show .accordion-content{
-  display: block;
-}
-
 .accordion-title:hover {
   background: var(--gray-200);
 }
@@ -739,6 +731,10 @@ a:hover {
   padding: 8px 24px;
   border: 0px;
   background: transparent;
+}
+
+.accordion-content.show {
+  display: block;
 }
 
 /**
@@ -1147,6 +1143,7 @@ button[disabled] {
   font-size: 18px;
   transition: 0.6s ease;
   user-select: none;
+  display: none;
 }
 
 .carousel-control-next {
@@ -1157,6 +1154,11 @@ button[disabled] {
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
   color: #ffffff;
+}
+
+.carousel-control-prev.show,
+.carousel-control-next.show {
+  display: inline-block;
 }
 
 .carousel-text {
@@ -1281,14 +1283,13 @@ button[disabled] {
   display: none;
   float: left;
   min-width: 10rem;
-  margin: 0.2rem 0 0;
+  margin: 0.125rem 0 0;
   font-size: 15px;
   color: var(--gray-1000);
   text-align: left;
   list-style: none;
   background-color: #ffffff;
   background-clip: padding-box;
-  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 20%);
 }
 
 .dropdown-menu.show {
@@ -1423,7 +1424,7 @@ button[disabled] {
 .text-area {
   font-family: var(--font-charlie-text);
   font-size: 14px;
-  padding: 5px 8px;
+  padding: 12px 18px;
   line-height: 17px;
   color: var(--gray-1000);
   background-color: #ffffff;
@@ -1442,7 +1443,7 @@ button[disabled] {
 .select-input {
   font-family: var(--font-charlie-text);
   font-size: 14px;
-  padding: 5px 24px 5px 8px;
+  padding: 8px 18px;
   line-height: 14px;
   background-color: #ffffff;
   width: 100%;
@@ -1904,42 +1905,42 @@ button[disabled] {
 
 /**
   * ------------------------------------------------------------------------
-  * Badge
+  * Tag
   * ------------------------------------------------------------------------
   */
-.badge {
+.tag {
   display: inline-block;
-  font-size: 12px;
+  font-size: 13px;
   margin: 0.25rem;
-  padding: 0.1rem 0.6rem;
+  padding: 0.3rem 0.6rem;
   border-radius: 0.9375rem;
 }
 
-.badge-wrapper {
+.tag-wrapper {
   margin-bottom: 5px;
 }
 
-.badge-blue {
-  color: #ffffff;
-  background-color: var(--blue-400);
+.tag-blue {
+  color: var(--blue-500);
+  background-color: var(--blue-50);
 }
 
-.badge-green {
-  color: #ffffff;
-  background-color: var(--green-400);
+.tag-green {
+  color: var(--green-500);
+  background-color: var(--green-50);
 }
 
-.badge-yellow {
-  color: #ffffff;
-  background-color: var(--yellow-400);
+.tag-yellow {
+  color: var(--yellow-400);
+  background-color: var(--yellow-50);
 }
 
-.badge-red {
-  color: #ffffff;
-  background-color: var(--red-100);
+.tag-red {
+  color: var(--red-100);
+  background-color: var(--red-50);
 }
 
-.badge-close {
+.tag-close {
   position: relative;
   font-size: 13px !important;
   top: 2.3px;
@@ -1971,19 +1972,19 @@ button[disabled] {
 }
 
 .toast-info {
-  border-top: 3px solid var(--blue-400);
+  border-left: 3px solid var(--blue-400);
 }
 
 .toast-error {
-  border-top: 3px solid var(--red-100);
+  border-left: 3px solid var(--red-100);
 }
 
 .toast-warn {
-  border-top: 3px solid var(--yellow-400);
+  border-left: 3px solid var(--yellow-400);
 }
 
 .toast-success {
-  border-top: 3px solid var(--green-400);
+  border-left: 3px solid var(--green-400);
 }
 
 .toast-title {
