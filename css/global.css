@@ -1,88 +1,5 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-
-@font-face {
-  font-family: "Charlie Text";
-  src: url("../fonts/Charlie_Text-Bold_Italic.woff") format("woff");
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Charlie Text";
-  src: url("../fonts/Charlie_Text-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Charlie Text";
-  src: url("../fonts/Charlie_Text-Italic.woff") format("woff");
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Charlie Text";
-  src: url("../fonts/Charlie_Text-Light_Italic.woff") format("woff");
-  font-weight: 300;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Charlie Text";
-  src: url("../fonts/Charlie_Text-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Charlie Text";
-  src: url("../fonts/Charlie_Text-Semibold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Charlie Text";
-  src: url("../fonts/Charlie_Text-Semibold_Italic.woff") format("woff");
-  font-weight: 600;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Charlie Display";
-  src: url("../fonts/Charlie_Display-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Charlie Display";
-  src: url("../fonts/Charlie_Display-Bold_Italic.woff") format("woff");
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Charlie Display";
-  src: url("../fonts/Charlie_Display-Italic.woff") format("woff");
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Charlie Display";
-  src: url("../fonts/Charlie_Display-Semibold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Charlie Display";
-  src: url("../fonts/Charlie_Display-Semibold_Italic.woff") format("woff");
-  font-weight: 600;
-  font-style: italic;
-}
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 
 :root {
   --red-50: #faeae8;
@@ -158,8 +75,8 @@
   --gray-900: #151515;
   --gray-1000: #030303;
 
-  --primary: var(--cyan-300);
-  --hover-primary: var(--cyan-400);
+  --primary: var(--blue-400);
+  --hover-primary: var(--blue-500);
 
   --secondary: var(--gray-850);
   --hover-secondary: var(--gray-900);
@@ -173,8 +90,7 @@
   --light: #fafafa;
   --dark: #212427;
 
-  --font-charlie-text: "Charlie Text", sans-serif;
-  --font-charlie-display: "Charlie Display", sans-serif;
+  --font-charlie-text: "Red Hat Text", sans-serif;
 }
 
 html {
@@ -714,7 +630,7 @@ a:hover {
   padding-left: 24px;
   border: 0px;
   min-height: 32px;
-  font-weight: 500;
+  font-size: 16px;
 }
 
 .accordion-icon {
@@ -733,8 +649,13 @@ a:hover {
   background: transparent;
 }
 
+.accordion-title.show {
+  border-left: 3px solid var(--primary);
+}
+
 .accordion-content.show {
   display: block;
+  border-left: 3px solid var(--primary);
 }
 
 /**
@@ -755,10 +676,21 @@ a:hover {
   min-height: 3rem;
   min-width: 256px;
   color: var(--gray-1000);
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 21px;
   background-color: #ffffff;
+  border-top: 2px solid var(--blue-400);
   box-shadow: 0 2px 6px 0 rgb(0 0 0 / 20%);
+}
+
+.alert .alert-title {
+  color: var(--blue-500);
+}
+
+.alert span {
+  font-size: 20px;
+  margin-top: 16px;
+  margin-left: 10px;
+  color: var(--blue-400);
 }
 
 .alert-text-wrapper {
@@ -766,7 +698,7 @@ a:hover {
   flex-wrap: wrap;
   -webkit-align-items: center;
   align-items: center;
-  padding: 0.75rem 0;
+  padding: 1rem 0;
 }
 
 .alert-title {
@@ -787,21 +719,6 @@ a:hover {
   word-break: break-word;
 }
 
-.alert-info {
-  border-top: 2px solid var(--blue-400);
-}
-
-.alert-info .alert-title {
-  color: var(--blue-500);
-}
-
-.alert-info span {
-  font-size: 18px;
-  margin-top: 12px;
-  margin-left: 10px;
-  color: var(--blue-400);
-}
-
 .alert-error {
   border-top: 2px solid var(--red-100);
 }
@@ -811,8 +728,8 @@ a:hover {
 }
 
 .alert-error span {
-  font-size: 18px;
-  margin-top: 12px;
+  font-size: 20px;
+  margin-top: 16px;
   margin-left: 10px;
   color: var(--red-100);
 }
@@ -822,12 +739,12 @@ a:hover {
 }
 
 .alert-warn .alert-title {
-  color: var(--yellow-600);
+  color: var(--yellow-500);
 }
 
 .alert-warn span {
-  font-size: 18px;
-  margin-top: 12px;
+  font-size: 20px;
+  margin-top: 16px;
   margin-left: 10px;
   color: var(--yellow-400);
 }
@@ -837,12 +754,12 @@ a:hover {
 }
 
 .alert-success .alert-title {
-  color: var(--green-600);
+  color: var(--green-500);
 }
 
 .alert-success span {
-  font-size: 18px;
-  margin-top: 12px;
+  font-size: 20px;
+  margin-top: 16px;
   margin-left: 10px;
   color: var(--green-400);
 }
@@ -922,7 +839,6 @@ a:hover {
   display: inline-flex;
   padding: 6px 16px;
   font-size: 15px;
-  font-weight: 500;
   line-height: 1.25rem;
   letter-spacing: 0.16px;
   min-height: 36px;
@@ -1247,7 +1163,7 @@ button[disabled] {
   border-radius: 0;
   border: solid 1px #f0f0f0;
   border-bottom: solid 1px #8a8d90;
-  padding-right: 10px;
+  padding: 6px 8px;
   min-height: 36px;
   max-height: 36px;
 }
@@ -1284,12 +1200,13 @@ button[disabled] {
   float: left;
   min-width: 10rem;
   margin: 0.125rem 0 0;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--gray-1000);
   text-align: left;
   list-style: none;
   background-color: #ffffff;
   background-clip: padding-box;
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 20%);
 }
 
 .dropdown-menu.show {
@@ -1303,7 +1220,7 @@ button[disabled] {
   padding: 8px 16px;
   clear: both;
   line-height: 20px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--gray-1000);
   text-align: inherit;
@@ -1413,6 +1330,7 @@ button[disabled] {
   line-height: 14px;
   color: var(--gray-1000);
   border: solid 1px #d2d2d2;
+  border-bottom: solid 1px #8a8d90;
   min-height: 36px;
   max-height: 36px;
   background-color: #ffffff;
@@ -1435,6 +1353,7 @@ button[disabled] {
   order: 3;
   resize: vertical;
   border: solid 1px #d2d2d2;
+  border-bottom: solid 1px #8a8d90;
   -webkit-appearance: none;
   transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9),
     outline 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
@@ -1450,6 +1369,7 @@ button[disabled] {
   min-width: 10rem;
   min-height: 36px;
   border: solid 1px #d2d2d2;
+  border-bottom: solid 1px #8a8d90;
   transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9),
     outline 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
 }
@@ -1543,7 +1463,7 @@ button[disabled] {
 }
 
 .navbar-brand-name {
-  font-family: var(--font-charlie-display);
+  font-family: var(--font-charlie-text);
   font-weight: bold;
   color: var(--light);
   margin-left: 16px;

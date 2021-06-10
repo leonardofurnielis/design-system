@@ -120,7 +120,7 @@ function accordionToggleListener(event) {
     element.parentElement &&
     element.parentElement.classList.contains("accordion-item")
   ) {
-    const accordion =
+    const accordionContent =
       element.parentElement.getElementsByClassName("accordion-content")[0];
 
     const accordionIcon =
@@ -131,7 +131,8 @@ function accordionToggleListener(event) {
       accordionIcon.innerHTML = "keyboard_arrow_right";
     }
 
-    accordion.classList.toggle("show");
+    element.classList.toggle("show");
+    accordionContent.classList.toggle("show");
   }
 }
 
