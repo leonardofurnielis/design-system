@@ -137,38 +137,38 @@ h6,
 .h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
 h1,
 .h1 {
-  font-size: 2.5rem;
+  font-size: 24px;
 }
 
 h2,
 .h2 {
-  font-size: 2rem;
+  font-size: 20px;
 }
 
 h3,
 .h3 {
-  font-size: 1.75rem;
+  font-size: 18px;
 }
 
 h4,
 .h4 {
-  font-size: 1.5rem;
+  font-size: 16px;
 }
 
 h5,
 .h5 {
-  font-size: 1.25rem;
+  font-size: 16px;
 }
 
 h6,
 .h6 {
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 p {
@@ -663,6 +663,7 @@ a:hover {
   * Alert
   * ------------------------------------------------------------------------
   */
+
 .alert {
   font-size: 14rem;
   font-weight: 400;
@@ -678,7 +679,7 @@ a:hover {
   color: var(--gray-1000);
   margin-bottom: 21px;
   background-color: #ffffff;
-  border-top: 2px solid var(--blue-400);
+  border-top: 2px solid var(--primary);
   box-shadow: 0 2px 6px 0 rgb(0 0 0 / 20%);
 }
 
@@ -719,7 +720,7 @@ a:hover {
   word-break: break-word;
 }
 
-.alert-error {
+.alert.alert-error {
   border-top: 2px solid var(--red-100);
 }
 
@@ -734,7 +735,7 @@ a:hover {
   color: var(--red-100);
 }
 
-.alert-warn {
+.alert.alert-warn {
   border-top: 2px solid var(--yellow-400);
 }
 
@@ -749,7 +750,7 @@ a:hover {
   color: var(--yellow-400);
 }
 
-.alert-success {
+.alert.alert-success {
   border-top: 2px solid var(--green-400);
 }
 
@@ -876,78 +877,78 @@ button[disabled] {
   color: var(--gray-500);
 }
 
-.btn-primary {
+.btn.btn-primary {
   border: 1px solid transparent;
   background-color: var(--primary);
   color: #ffffff;
 }
 
-.btn-primary:active {
+.btn.btn-primary:active {
   outline: none;
 }
 
-.btn-primary:hover:enabled {
+.btn.btn-primary:hover:enabled {
   background-color: var(--hover-primary);
 }
 
-.btn-secondary {
+.btn.btn-secondary {
   border: 1px solid transparent;
   background-color: var(--secondary);
   color: #ffffff;
 }
 
-.btn-secondary:active {
+.btn.btn-secondary:active {
   outline: none;
 }
 
-.btn-secondary:hover:enabled {
+.btn.btn-secondary:hover:enabled {
   background-color: var(--hover-secondary);
 }
 
-.btn-danger {
+.btn.btn-danger {
   border: 1px solid transparent;
   background-color: var(--danger);
   color: #ffffff;
 }
 
-.btn-danger:active {
+.btn.btn-danger:active {
   outline: none;
 }
 
-.btn-danger:hover:enabled {
+.btn.btn-danger:hover:enabled {
   background-color: var(--hover-danger);
 }
 
-.btn-warn {
+.btn.btn-warn {
   border: 1px solid transparent;
   background-color: var(--warn);
   color: var(--gray-1000);
 }
 
-.btn-warn:active {
+.btn.btn-warn:active {
   outline: none;
 }
 
-.btn-warn:hover:enabled {
+.btn.btn-warn:hover:enabled {
   background-color: var(--hover-warn);
 }
 
-.btn-ghost {
+.btn.btn-ghost {
   border: 1px solid transparent;
   background-color: transparent;
   color: var(--primary);
 }
 
-.btn-ghost:active {
+.btn.btn-ghost:active {
   outline: none;
 }
 
-.btn-ghost:hover:enabled {
+.btn.btn-ghost:hover:enabled {
   background-color: transparent;
   color: var(--blue-500);
 }
 
-.btn-small {
+.btn.btn-small {
   line-height: 1rem;
   padding: 6px 16px;
   min-height: 33px;
@@ -1034,6 +1035,10 @@ button[disabled] {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transition: transform 0.6s ease-in-out;
+}
+
+.carousel-image {
+  width: 100%;
 }
 
 .carousel-item:first-child {
@@ -1317,9 +1322,9 @@ button[disabled] {
 }
 
 .form-label {
-  color: var(--gray-800);
+  color: var(--gray-900);
   font-weight: 500;
-  font-size: 12px;
+  font-size: 14px;
   margin: 0 0 0.5rem;
 }
 
@@ -1825,42 +1830,65 @@ button[disabled] {
 
 /**
   * ------------------------------------------------------------------------
-  * Tag
+  * Label
   * ------------------------------------------------------------------------
   */
-.tag {
-  display: inline-block;
-  font-size: 13px;
-  margin: 0.25rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 0.9375rem;
-}
 
-.tag-wrapper {
+.label-wrapper {
   margin-bottom: 5px;
 }
 
-.tag-blue {
+.label {
+  display: inline-block;
+  font-size: 14px;
+  margin: 0.25rem;
+  padding: 4px 8px;
+  border-radius: 0.9375rem;
+}
+
+.label.label-gray {
+  color: var(--gray-800);
+  border: 1px solid var(--gray-400);
+  background-color: var(--gray-200);
+}
+
+.label.label-blue {
   color: var(--blue-500);
+  border: 1px solid var(--blue-100);
   background-color: var(--blue-50);
 }
 
-.tag-green {
+.label.label-green {
   color: var(--green-500);
+  border: 1px solid var(--green-100);
   background-color: var(--green-50);
 }
 
-.tag-yellow {
+.label.label-yellow {
   color: var(--yellow-400);
+  border: 1px solid var(--yellow-100);
   background-color: var(--yellow-50);
 }
 
-.tag-red {
+.label.label-red {
   color: var(--red-100);
+  border: 1px solid var(--red-100);
   background-color: var(--red-50);
 }
 
-.tag-close {
+.label.label-purple {
+  color: var(--purple-500);
+  border: 1px solid var(--purple-100);
+  background-color: var(--purple-50);
+}
+
+.label.label-cyan {
+  color: var(--cyan-400);
+  border: 1px solid var(--cyan-100);
+  background-color: var(--cyan-50);
+}
+
+.label-close {
   position: relative;
   font-size: 13px !important;
   top: 2.3px;
@@ -1873,6 +1901,7 @@ button[disabled] {
   * Toast
   * ------------------------------------------------------------------------
   */
+
 .toast {
   position: relative;
   font-size: 12rem;
@@ -1889,21 +1918,18 @@ button[disabled] {
   margin: 16px 10px;
   box-shadow: 0 2px 6px 0 rgb(0 0 0 / 20%);
   background: #ffffff;
+  border-left: 3px solid var(--primary);
 }
 
-.toast-info {
-  border-left: 3px solid var(--blue-400);
-}
-
-.toast-error {
+.toast.toast-error {
   border-left: 3px solid var(--red-100);
 }
 
-.toast-warn {
+.toast.toast-warn {
   border-left: 3px solid var(--yellow-400);
 }
 
-.toast-success {
+.toast.toast-success {
   border-left: 3px solid var(--green-400);
 }
 
@@ -1962,4 +1988,29 @@ button[disabled] {
   max-width: 1.5rem;
   transition: outline 0.11s cubic-bezier(0.2, 0, 0.38, 0.9),
     background-color 0.11s cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+/**
+  * ------------------------------------------------------------------------
+  * Badge
+  * ------------------------------------------------------------------------
+  */
+
+.badge {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0px 8px;
+  border-radius: 30em;
+  min-width: 2rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.badge.badge-read {
+  background-color: var(--gray-200);
+}
+
+.badge.badge-unread {
+  color: #ffffff;
+  background-color: var(--primary);
 }

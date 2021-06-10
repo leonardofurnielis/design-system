@@ -35,14 +35,16 @@
     <div class="row">
       <div id="global-bd-sidebar" class="bd-sidebar bd-light">
         <div class="bd-links">
-          <a class="bd-brand" [routerLink]="['/home']">
+          <a class="bd-brand">
             <img src="./images/logo.png" width="48" height="48" />
           </a>
           <a class="bd-link active" href="#accordion">Accordion</a>
           <a class="bd-link" href="#alert">Alert</a>
+          <a class="bd-link" href="#badge">Badge</a>
           <a class="bd-link" href="#breadcrumb">Breadcrumb</a>
           <a class="bd-link" href="#button">Button</a>
           <a class="bd-link" href="#card">Card</a>
+          <a class="bd-link" href="#carousel">Carousel</a>
           <a class="bd-link" href="#checkbox">Checkbox</a>
           <a class="bd-link" href="#dropdown">Dropdown</a>
           <a class="bd-link" href="#form">Form</a>
@@ -50,7 +52,7 @@
           <a class="bd-link" href="#loading">Loading</a>
           <a class="bd-link" href="#radio">Radio</a>
           <a class="bd-link" href="#tab">Tab</a>
-          <a class="bd-link" href="#badge">Badge</a>
+          <a class="bd-link" href="#label">Label</a>
           <a class="bd-link" href="#toast">Toast</a>
           <hr />
           <a class="bd-link" href="#grid">Grid System</a>
@@ -58,7 +60,7 @@
       </div>
 
       <main class="container container-sidebar">
-        <h3 id="accordion">Accordion</h3>
+        <h1 id="accordion">Accordion</h1>
         <div class="row">
           <div class="accordion">
             <div class="accordion-item">
@@ -101,10 +103,10 @@
           </div>
         </div>
         <span class="spacing-5"></span>
-        <h3 id="alert">Alert</h3>
+        <h1 id="alert">Alert</h1>
         <div class="row">
           <div class="col-12">
-            <div class="alert alert-info">
+            <div class="alert">
               <span class="material-icons"> circle_notifications </span>
               <div class="alert-details">
                 <div class="alert-text-wrapper">
@@ -190,7 +192,13 @@
           </div>
         </div>
         <span class="spacing-5"></span>
-        <h3 id="breadcrumb">Breadcrumb</h3>
+        <h1 id="badge">Badge</h1>
+        <div class="row" style="display: block;">
+          <span class="badge badge-read">3</span>
+          <span class="badge badge-unread">+999</span>
+        </div>
+        <span class="spacing-5"></span>
+        <h1 id="breadcrumb">Breadcrumb</h1>
         <div class="row">
           <nav>
             <ol class="breadcrumb">
@@ -201,9 +209,9 @@
         </div>
         <span class="spacing-5"></span>
 
-        <h3 id="button">Button</h3>
+        <h1 id="button">Button</h1>
         <span class="spacing-5"></span>
-        <div class="row">
+        <div class="row" style="display: block;">
           <button class="btn" type="button">Basic</button>
           <span class="spacing-03"></span>
           <button class="btn btn-primary" type="button">Primary</button>
@@ -217,7 +225,7 @@
           <button class="btn btn-warn" type="button">Warning</button>
         </div>
         <span class="spacing-5"></span>
-        <h3 id="card">Card</h3>
+        <h1 id="card">Card</h1>
         <span class="spacing-5"></span>
         <div class="row">
           <div class="col-4">
@@ -260,29 +268,75 @@
           </div>
         </div>
         <span class="spacing-5"></span>
-        <h3 id="checkbox">Checkbox</h3>
+        <h1 id="carousel">Carousel</h1>
+        <div class="row">
+          <div class="col-6">
+            <div class="carousel" id="slide-1">
+              <div class="carousel-item">
+                <img class="carousel-image" src="./images/carousel-1.jpg" />
+              </div>
+              <div class="carousel-item">
+                <img class="carousel-image" src="./images/carousel-2.jpg" />
+              </div>
+              <a class="carousel-control-prev"
+                ><span class="material-icons carousel-control-prev-icon">
+                  keyboard_arrow_left
+                </span></a
+              >
+              <a class="carousel-control-next"
+                ><span class="material-icons carousel-control-next-icon">
+                  keyboard_arrow_right
+                </span></a
+              >
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="carousel" id="slide-2">
+              <div class="carousel-item">
+                <img class="carousel-image" src="./images/carousel-1.jpg" />
+              </div>
+              <div class="carousel-item">
+                <img class="carousel-image" src="./images/carousel-2.jpg" />
+              </div>
+              <a class="carousel-control-prev"
+                ><span class="material-icons carousel-control-prev-icon">
+                  keyboard_arrow_left
+                </span></a
+              >
+              <a class="carousel-control-next"
+                ><span class="material-icons carousel-control-next-icon">
+                  keyboard_arrow_right
+                </span></a
+              >
+              <div class="carousel-indicators">
+                <span class="carousel-indicators-item" data-slide-to="1"></span>
+                <span class="carousel-indicators-item" data-slide-to="2"></span>
+              </div>
+            </div>
+          </div>
+        </div>
         <span class="spacing-5"></span>
-
-          <div class="checkbox">
-            <input class="checkbox-input" type="checkbox" />
-            <label class="checkbox-label">One</label>
-          </div>
-          <div class="checkbox">
-            <input class="checkbox-input" type="checkbox" />
-            <label class="checkbox-label">Two</label>
-          </div>
-          <div class="checkbox">
-            <input class="checkbox-input" type="checkbox" />
-            <label class="checkbox-label">Three</label>
-          </div>
-          <div class="checkbox">
-            <input class="checkbox-input" type="checkbox" />
-            <label class="checkbox-label">Four</label>
-          </div>
-
+        <h1 id="checkbox">Checkbox</h1>
+        <span class="spacing-5"></span>
+        <div class="checkbox">
+          <input class="checkbox-input" type="checkbox" />
+          <label class="checkbox-label">One</label>
+        </div>
+        <div class="checkbox">
+          <input class="checkbox-input" type="checkbox" />
+          <label class="checkbox-label">Two</label>
+        </div>
+        <div class="checkbox">
+          <input class="checkbox-input" type="checkbox" />
+          <label class="checkbox-label">Three</label>
+        </div>
+        <div class="checkbox">
+          <input class="checkbox-input" type="checkbox" />
+          <label class="checkbox-label">Four</label>
+        </div>
 
         <span class="spacing-5"></span>
-        <h3 id="dropdown">Dropdown</h3>
+        <h1 id="dropdown">Dropdown</h1>
         <span class="spacing-5"></span>
         <div class="row">
           <div class="dropdown">
@@ -305,7 +359,7 @@
         </div>
 
         <span class="spacing-5"></span>
-        <h3 id="form">Form</h3>
+        <h1 id="form">Form</h1>
         <span class="spacing-5"></span>
         <div class="row">
           <div class="form-group col-3">
@@ -336,7 +390,7 @@
         </div>
 
         <span class="spacing-5"></span>
-        <h3 id="list">List</h3>
+        <h1 id="list">List</h1>
         <span class="spacing-5"></span>
         <div class="row">
           <ul class="list-group">
@@ -353,7 +407,7 @@
           </ul>
         </div>
         <span class="spacing-5"></span>
-        <h6 id="list"><span class="spacing-03"></span>List Selection</h6>
+        <h2><span class="spacing-03"></span>List Selection</h2>
         <div class="row">
           <ul class="list-group list-group-selection">
             <li class="list-group-item" aria-disabled="true">
@@ -370,7 +424,7 @@
         </div>
 
         <span class="spacing-5"></span>
-        <h3 id="loading">Loading</h3>
+        <h1 id="loading">Loading</h1>
         <span class="spacing-5"></span>
         <div class="row">
           <div class="loading">
@@ -389,7 +443,7 @@
         </div>
 
         <span class="spacing-5"></span>
-        <h3 id="radio">Radio</h3>
+        <h1 id="radio">Radio</h1>
         <span class="spacing-5"></span>
         <div class="radio">
           <input class="radio-input" name="gender" type="radio" />
@@ -409,18 +463,18 @@
         </div>
         <span class="spacing-5"></span>
 
-        <h3 id="tab">Tab</h3>
+        <h1 id="tab">Tab</h1>
         <span class="spacing-5"></span>
         <div class="row">
-          <ul class="tab" id="mvTab">
+          <ul class="tab" aria-label="mytab">
             <li class="tab-link active" aria-control="one">One</li>
             <li class="tab-link" aria-control="two">Two</li>
             <li class="tab-link" aria-control="three">Three</li>
           </ul>
         </div>
-        <div class="tab-content" id="mvTab">
+        <div class="tab-content" aria-label="mytab">
           <div class="tab-pane show" id="one">
-            <h3>One</h3>
+            <h1>One</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
               iure nam sint quidem autem cupiditate ipsam illum, nobis atque
@@ -429,7 +483,7 @@
             </p>
           </div>
           <div class="tab-pane" id="two">
-            <h3>Two</h3>
+            <h1>Two</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
               iure nam sint quidem autem cupiditate ipsam illum, nobis atque
@@ -438,7 +492,7 @@
             </p>
           </div>
           <div class="tab-pane" id="three">
-            <h3>Three</h3>
+            <h1>Three</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
               iure nam sint quidem autem cupiditate ipsam illum, nobis atque
@@ -449,26 +503,29 @@
         </div>
         <span class="spacing-5"></span>
 
-        <h3 id="badge">Badge</h3>
+        <h1 id="label">Label</h1>
         <span class="spacing-5"></span>
         <div class="row">
-          <div class="badge-wrapper">
-            <span class="badge badge-green"
-              >Green <i class="material-icons badge-close"> close </i></span
+          <div class="label-wrapper">
+            <span class="label label-gray">Gray</span>
+            <span class="label label-green"
+              >Green <i class="material-icons label-close"> close </i></span
             >
-            <span class="badge badge-blue"
-              >Blue <i class="material-icons badge-close"> close </i></span
+            <span class="label label-blue"
+              >Blue <i class="material-icons label-close"> close </i></span
             >
-            <span class="badge badge-yellow">Yellow </span>
-            <span class="badge badge-red">Red</span>
+            <span class="label label-yellow">Yellow </span>
+            <span class="label label-red">Red</span>
+            <span class="label label-purple">Purple</span>
+            <span class="label label-cyan">Cyan</span>
           </div>
         </div>
         <span class="spacing-5"></span>
 
-        <h3 id="toast" id="toast">Toast</h3>
+        <h1 id="toast">Toast</h1>
         <span class="spacing-5"></span>
         <div class="row">
-          <div class="toast toast-info">
+          <div class="toast">
             <div class="toast-details">
               <div class="toast-text-wrapper">
                 <p class="toast-title mr-auto">
@@ -546,7 +603,7 @@
         </div>
         <span class="spacing-5"></span>
 
-        <h3 id="grid">Grid System</h3>
+        <h1 id="grid">Grid System</h1>
         <span class="spacing-5"></span>
         <h5>col-12</h5>
         <div class="row">
@@ -588,7 +645,5 @@
       </main>
     </div>
   </body>
-
-  <style></style>
   <script type="text/javascript" src="js/global.js"></script>
 </html>

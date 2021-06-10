@@ -211,9 +211,9 @@ function tabHandlerListener(event) {
     const tabParent = element.parentElement;
     const ariaControl = element.attributes["aria-control"].value;
 
-    const tabContent = document.querySelectorAll(
-      "#" + tabParent.id + ".tab-content"
-    )[0];
+    const tabContent = document.querySelector(
+      '[aria-label="mytab"].tab-content'
+    );
 
     tabParent.childNodes.forEach((el) => {
       if (el.classList) {
