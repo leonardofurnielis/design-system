@@ -1173,6 +1173,10 @@ button[disabled] {
   max-height: 36px;
 }
 
+.dropdown-toggle:hover {
+  border-bottom: solid 1px var(--primary);
+}
+
 .dropdown-toggle:focus {
   outline: none;
   border: solid 2px var(--primary);
@@ -1259,7 +1263,7 @@ button[disabled] {
   justify-items: center;
 }
 
-.file-uploader-btn {
+.file-upload-btn {
   margin-bottom: 0.5rem;
   line-height: 20px;
 }
@@ -1296,6 +1300,7 @@ button[disabled] {
 
 .file-visibility-hidden {
   visibility: hidden;
+  height: 0px;
 }
 
 /**
@@ -1377,6 +1382,12 @@ button[disabled] {
   border-bottom: solid 1px #8a8d90;
   transition: background-color 70ms cubic-bezier(0.2, 0, 0.38, 0.9),
     outline 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.text-input:hover,
+.select-input:hover,
+.text-area:hover {
+  border-bottom: solid 1px var(--primary);
 }
 
 .text-input:focus,

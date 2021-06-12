@@ -47,6 +47,7 @@
           <a class="bd-link" href="#carousel">Carousel</a>
           <a class="bd-link" href="#checkbox">Checkbox</a>
           <a class="bd-link" href="#dropdown">Dropdown</a>
+          <a class="bd-link" href="#file-upload">File upload</a>
           <a class="bd-link" href="#form">Form</a>
           <a class="bd-link" href="#list">List</a>
           <a class="bd-link" href="#loading">Loading</a>
@@ -193,7 +194,7 @@
         </div>
         <span class="spacing-5"></span>
         <h1 id="badge">Badge</h1>
-        <div class="row" style="display: block;">
+        <div class="row" style="display: block">
           <span class="badge badge-read">3</span>
           <span class="badge badge-unread">+999</span>
         </div>
@@ -211,7 +212,7 @@
 
         <h1 id="button">Button</h1>
         <span class="spacing-5"></span>
-        <div class="row" style="display: block;">
+        <div class="row" style="display: block">
           <button class="btn" type="button">Basic</button>
           <span class="spacing-03"></span>
           <button class="btn btn-primary" type="button">Primary</button>
@@ -357,7 +358,24 @@
             </div>
           </div>
         </div>
-
+        <span class="spacing-5"></span>
+        <h1 id="file-upload">File upload</h1>
+        <div class="row">
+          <div class="file-container">
+            <label class="form-label">File upload:</label>
+            <label class="form-label">only .jpg or png.</label>
+            <input
+              type="file"
+              id="images_1"
+              multiple=""
+              class="file-visibility-hidden"
+            />
+            <label for="images_1" class="btn btn-secondary file-upload-btn"
+              >Browse...</label
+            >
+            <div aria-control="images_1" class="file-selected-container"></div>
+          </div>
+        </div>
         <span class="spacing-5"></span>
         <h1 id="form">Form</h1>
         <span class="spacing-5"></span>
