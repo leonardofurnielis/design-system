@@ -1407,16 +1407,15 @@ a:hover {
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
+  width: 100%;
 }
 
 .list-group-item {
   position: relative;
   display: block;
-  padding: 16px 16px 24px 16px;
+  padding: 4px 16px;
   margin-bottom: 0;
   background-color: #ffffff;
-  border-top: 1px solid #d2d2d2;
-  border-bottom: 1px solid #d2d2d2;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -1426,11 +1425,12 @@ a:hover {
 }
 
 .list-group-item:hover {
-  background-color: #d2d2d2;
+  background-color: var(--gray-200);
 }
 
 .list-group-item.active {
-  background-color: #d2d2d2;
+  color: var(--primary);
+  background-color: var(--gray-200);
   cursor: unset;
 }
 
