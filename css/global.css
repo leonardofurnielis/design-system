@@ -90,7 +90,7 @@
   --light: #fafafa;
   --dark: #212427;
 
-  --font-charlie-text: "Red Hat Text", sans-serif;
+  --font-text: "Red Hat Text", overpass, helvetica, arial, sans-serif;
 }
 
 html {
@@ -104,11 +104,11 @@ html {
 }
 
 body {
-  font-family: var(--font-charlie-text);
-  margin: 0;
-  background: #ffffff;
+  font-family: var(--font-text);
   font-size: 0.875rem;
   font-weight: 400;
+  margin: 0;
+  background: #ffffff;
   line-height: 1.125rem;
   color: var(--gray-1000);
   -webkit-text-size-adjust: 100%;
@@ -626,17 +626,17 @@ a:hover {
 }
 
 .accordion-title {
+  font-size: 16px;
   line-height: 42px;
   padding-left: 24px;
   border: 0px;
   min-height: 32px;
-  font-size: 16px;
 }
 
 .accordion-icon {
+  font-size: 16px;
   color: var(--gray-1000);
   position: absolute;
-  font-size: 16px;
   top: 10px;
   right: 8px;
 }
@@ -665,7 +665,6 @@ a:hover {
   */
 
 .alert {
-  font-size: 14rem;
   font-weight: 400;
   line-height: 1.125rem;
   letter-spacing: 0.16px;
@@ -712,9 +711,9 @@ a:hover {
 }
 
 .alert-message {
-  margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
+  margin-bottom: 0;
   line-height: 1.125rem;
   letter-spacing: 0.16px;
   word-break: break-word;
@@ -835,11 +834,11 @@ a:hover {
   * ------------------------------------------------------------------------
   */
 .btn {
-  font-family: var(--font-charlie-text);
+  font-family: var(--font-text);
+  font-size: 16px;
   position: relative;
   display: inline-flex;
   padding: 6px 16px;
-  font-size: 15px;
   line-height: 1.25rem;
   letter-spacing: 0.16px;
   min-height: 36px;
@@ -1053,6 +1052,8 @@ button[disabled] {
 
 .carousel-control-prev,
 .carousel-control-next {
+  font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -1060,8 +1061,6 @@ button[disabled] {
   margin-top: -22px;
   padding: 16px;
   color: #ffffff;
-  font-weight: bold;
-  font-size: 18px;
   transition: 0.6s ease;
   user-select: none;
   display: none;
@@ -1149,8 +1148,8 @@ button[disabled] {
 }
 
 .checkbox-label {
+  font-size: 16px;
   cursor: pointer;
-  font-size: 15px;
 }
 
 /**
@@ -1201,6 +1200,7 @@ button[disabled] {
 }
 
 .dropdown-menu {
+  font-size: 16px;
   position: absolute;
   top: 100%;
   left: 0;
@@ -1209,7 +1209,6 @@ button[disabled] {
   float: left;
   min-width: 10rem;
   margin: 0.125rem 0 0;
-  font-size: 16px;
   color: var(--gray-1000);
   text-align: left;
   list-style: none;
@@ -1223,14 +1222,14 @@ button[disabled] {
 }
 
 .dropdown-item {
+  font-size: 16px;
+  font-weight: 400;
   text-decoration: none;
   display: block;
   width: 100%;
   padding: 8px 16px;
   clear: both;
   line-height: 20px;
-  font-size: 16px;
-  font-weight: 400;
   color: var(--gray-1000);
   text-align: inherit;
   white-space: nowrap;
@@ -1326,14 +1325,14 @@ button[disabled] {
 }
 
 .form-label {
-  color: var(--gray-900);
-  font-weight: 500;
   font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-900);
   margin: 0 0 0.5rem;
 }
 
 .text-input {
-  font-family: var(--font-charlie-text);
+  font-family: var(--font-text);
   font-size: 14px;
   padding: 5px 8px;
   line-height: 14px;
@@ -1349,7 +1348,7 @@ button[disabled] {
 }
 
 .text-area {
-  font-family: var(--font-charlie-text);
+  font-family: var(--font-text);
   font-size: 14px;
   padding: 12px 18px;
   line-height: 17px;
@@ -1369,7 +1368,7 @@ button[disabled] {
 }
 
 .select-input {
-  font-family: var(--font-charlie-text);
+  font-family: var(--font-text);
   font-size: 14px;
   padding: 8px 18px;
   line-height: 14px;
@@ -1478,7 +1477,7 @@ button[disabled] {
 }
 
 .navbar-brand-name {
-  font-family: var(--font-charlie-text);
+  font-family: var(--font-text);
   font-weight: bold;
   color: var(--light);
   margin-left: 16px;
@@ -1603,8 +1602,9 @@ button[disabled] {
 
   .navbar.show .navbar-list {
     background-color: var(--dark);
-    padding: 75px 40px 8px;
-    height: 100%;
+    padding: 45px 40px 8px;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
   }
 
   .navbar.show {
@@ -1612,6 +1612,7 @@ button[disabled] {
   }
 
   .navbar-link {
+    min-height: 56px;
     font-weight: 300;
     font-size: 14px;
   }
@@ -1659,8 +1660,8 @@ button[disabled] {
 }
 
 .radio-label {
+  font-size: 16px;
   cursor: pointer;
-  font-size: 15px;
 }
 
 /**
@@ -1712,11 +1713,11 @@ button[disabled] {
 }
 
 .bd-link {
+  font-size: 16px;
+  font-weight: 400;
   line-height: 24px;
   padding: 16px 16px;
   text-decoration: none;
-  font-weight: 400;
-  font-size: 16px;
   color: var(--light);
   display: block;
   cursor: pointer;
@@ -1781,15 +1782,15 @@ button[disabled] {
 
 /* Style the buttons inside the tab */
 .tab-link {
+  font-family: var(--font-text);
+  font-size: 16px;
+  font-weight: 400;
   transition: 0.2s;
-  font-family: var(--font-charlie-text);
   float: left;
   border: none;
   outline: none;
   cursor: pointer;
-  font-weight: 500;
   padding: 12px 42px 12px 16px;
-  font-size: 14px;
   border-bottom: 3px solid var(--light);
 }
 
@@ -1828,8 +1829,8 @@ button[disabled] {
 }
 
 .label {
-  display: inline-block;
   font-size: 14px;
+  display: inline-block;
   margin: 0.25rem;
   padding: 4px 8px;
   border-radius: 0.9375rem;
@@ -1878,8 +1879,8 @@ button[disabled] {
 }
 
 .label-close {
-  position: relative;
   font-size: 13px !important;
+  position: relative;
   top: 2.3px;
   margin-left: 4px;
   cursor: pointer;
@@ -1892,9 +1893,9 @@ button[disabled] {
   */
 
 .toast {
-  position: relative;
   font-size: 12rem;
   font-weight: 400;
+  position: relative;
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: space-between;
@@ -1923,9 +1924,9 @@ button[disabled] {
 }
 
 .toast-title {
-  color: var(--gray-1000);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
+  color: var(--gray-1000);
   line-height: 1.125rem;
   letter-spacing: 0.16px;
   white-space: nowrap;
@@ -1953,15 +1954,15 @@ button[disabled] {
 }
 
 .toast-time {
+  font-size: 11px;
+  font-weight: 500;
   margin-right: 32px;
-  font-size: 11.2px;
-  font-weight: 700;
   color: var(--gray-1000);
 }
 
 .toast-message {
+  font-size: 12px;
   margin-bottom: 0;
-  font-size: 13px;
   letter-spacing: 0.16px;
   word-break: break-word;
   padding: 5px 0 12px 0;
