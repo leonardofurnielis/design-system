@@ -13,6 +13,9 @@ window.onload = function () {
 
   document.addEventListener("click", accordionToggleListener);
 
+  document.addEventListener("click", menuToggleListener);
+  document.addEventListener("click", menuToggleHideListener);
+
   document.addEventListener("click", dropdownToggleListener);
   document.addEventListener("click", dropdownHideListener);
 
@@ -133,6 +136,47 @@ function accordionToggleListener(event) {
 
     element.classList.toggle("show");
     accordionContent.classList.toggle("show");
+  }
+}
+
+/**
+ * ------------------------------------------------------------------------
+ * Menu Toggle
+ * ------------------------------------------------------------------------
+ */
+ function menuToggleListener(event) {
+  const element = event.target;
+
+  if (
+    element.parentElement &&
+    element.parentElement.classList.contains("menu-toggle")
+  ) {
+    const menuToggleList = document.querySelectorAll(".menu-toggle-options.show");
+    const menuToggle =
+      element.parentElement.getElementsByClassName("menu-toggle-options")[0];
+
+    if (menuToggle) {
+      menuToggle.classList.toggle("show");
+    }
+
+    menuToggleList.forEach((menu) => {
+      menu.classList.remove("show");
+    });
+  }
+}
+
+function menuToggleHideListener(event) {
+  const element = event.target;
+  const menuToggleList = document.querySelectorAll(".menu-toggle-options.show");
+
+  if (
+    (!element.parentElement ||
+      !element.parentElement.classList.contains("menu-toggle")) &&
+      menuToggleList.length > 0
+  ) {
+    menuToggleList.forEach((menuToggle) => {
+      menuToggle.classList.remove("show");
+    });
   }
 }
 
