@@ -1155,6 +1155,83 @@ a:hover {
 
 /**
   * ------------------------------------------------------------------------
+  * Menu Toggle
+  * ------------------------------------------------------------------------
+  */
+  .menu-toggle {
+    position: relative;
+    border-radius: 0;
+  }
+
+  .menu-toggle-icon {
+    color: var(--gray-1000);
+    border: none;
+    padding: 6px 8px;
+    min-height: 36px;
+    max-height: 36px;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+
+  .menu-toggle-icon::after {
+    border: solid var(--gray-1000);
+    border-width: 0 1px 1px 0;
+    content: "";
+    display: inline-block;
+    padding: 3px;
+    margin-left: 1em;
+    margin-top: 5px;
+    vertical-align: 0.2em;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+  .menu-toggle-options {
+    font-size: 16px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    margin: 0.125rem 0 0;
+    color: var(--gray-1000);
+    text-align: left;
+    list-style: none;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 20%);
+  }
+
+  .menu-toggle-options.show {
+    display: block;
+  }
+
+  .menu-item {
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    clear: both;
+    line-height: 20px;
+    color: var(--gray-1000);
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .menu-item:hover {
+    text-decoration: none;
+    color: var(--dark);
+    background-color: var(--gray-200);
+  }
+
+/**
+  * ------------------------------------------------------------------------
   * Dropdown
   * ------------------------------------------------------------------------
   */
