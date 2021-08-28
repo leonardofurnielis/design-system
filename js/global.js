@@ -164,8 +164,8 @@ function dropdownHideListener(event) {
   const dropdownList = document.querySelectorAll(".dropdown-menu.show");
 
   if (
-    element.parentElement &&
-    !element.parentElement.classList.contains("dropdown") &&
+    (!element.parentElement ||
+      !element.parentElement.classList.contains("dropdown")) &&
     dropdownList.length > 0
   ) {
     dropdownList.forEach((dropdown) => {
