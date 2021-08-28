@@ -152,7 +152,10 @@ function dropdownToggleListener(event) {
     const dropdown =
       element.parentElement.getElementsByClassName("dropdown-menu")[0];
 
-    dropdown.classList.toggle("show");
+    if (dropdown) {
+      dropdown.classList.toggle("show");
+    }
+
     dropdownList.forEach((menu) => {
       menu.classList.remove("show");
     });
